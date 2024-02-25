@@ -18,32 +18,23 @@ I will be using an api which provides timestamps for sunrise, sunset and other s
 
 ### Installing
 
-- How/where to download your program
-- Any modifications needed to be made to files/folders
+- Clone this repo to you local computer
+- Run ```npm install``` which will install all packages needed
+
 
 ### Executing program
 
-- How to run the program
-- Step-by-step bullets
+- Navigate to the project folder ```cd react-upskill-project```
+- Run ```npm run dev``` which will run you app on localhost
 
-```
-code blocks for commands
-```
 
 ## Help
 
-Any advise for common problems or issues.
-
-```
-command to run if program contains helper info
-```
+Reach out to Julia on Slack. 
 
 ## Author
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Julia, but with support from Diego and the Technigo community. 
 
 ## Weekly Project Progress
 
@@ -56,10 +47,13 @@ Describe here in detail the weekly implementations
 ### Week 1 Progress
 
 - **What did I implement this week?**
+  - [x] Set up my project directory
   - [x] Updated the readme file to reflect what I will be doing
   - [x] Changed the logo to a sun
-  - [x] Found an api I could use [Sunrise Sunset](https://sunrise-sunset.org/api)
-  - [x] Set up my project directory
+  - [x] Found an api I could use [Sunrise Sunset](https://sunrise-sunset.org/api) and tried fetching from it
+  - [x] Dynamically showing when the sun will set in Stockholm (today)
+  - [x] Used Netlify to publish the app at [All about the sun](https://steady-donut-cdba16.netlify.app/)
+
 
 - **What obstacles or roadblocks did I face this week?**
 
@@ -70,7 +64,7 @@ Describe here in detail the weekly implementations
   - [ ] The implementations above are examples, delete them and add yours
 
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
-  - [ ] Yes
+  - [x] Yes. I'm wondering if the api would be a good one to use and if I should stick to it. 
   - [ ] No
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours

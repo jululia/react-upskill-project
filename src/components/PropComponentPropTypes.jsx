@@ -7,10 +7,10 @@ export const PropComponentPropTypes = ({
   likesPizza,
 }) => {
   return (
-    <div className="bioComp">
+    <div className="city">
       <h2>{city}</h2>
-      <p>Longitude {longitude}</p>
-      <p>Latitude {latitude}</p>
+      <p>Longitude: {longitude}</p>
+      <p>Latitude: {latitude}</p>
       <strong>Is pineapple pizza a thing there?</strong>
       {likesPizza ? (
         <p>Yes! 🍍🍕</p>

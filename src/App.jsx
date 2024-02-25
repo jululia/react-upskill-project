@@ -24,10 +24,10 @@ export const App = () => {
 
   // Staticc Data Inyected through {} reference
   const appContent = {
-    heading: "All about the Sun",
-    intro: "This app will show some interesting (and current) stats about the sun. Stay tuned for more!", 
+    heading: "All about the sun",
+    intro: "This application presents you with interesting and up-to-date statistics about the sun. Although we plan to continuously expand its features, its initial function is straightforward yet intriguing - it provides the sunset time for Stockholm. The timestamp below is sourced from a real-time API and will change on a daily basis.", 
     componentInfo:
-      "Example components below. These will be removed later, but are good to keep as reference for now:",
+      "Example components below. These will be removed later, but are probably good to keep as reference for now:",
   };
   return (
     <>
@@ -35,29 +35,59 @@ export const App = () => {
       <Logos />
       <h1>{appContent.heading}</h1>
       <p>{appContent.intro}</p>
-      <hr />
       <TestComponent />
-      {/* <p>{appContent.reactivedataExampleThree}</p> */}
-      <div className="card">
+      
+      <div className="examples">
+        <h2>Example components</h2>
         <p>{appContent.componentInfo}</p>
+      <div className="card">
+        <h3>Example 1:</h3>
         <button onClick={addOne}>count is {count}</button>
-        <hr />
-        <h3>{name}</h3>
+        </div>
+        <div className="card">
+        <h3>Example 2:</h3>
+        <h4>{name}</h4>
         <button onClick={handleNameUpdate}>Change Name</button>
-        <hr />
       </div>
       <div>
+      <div className="card">
+      <h3>Example 3:</h3>
         <StaticComponent />
-        <hr />
+        </div>
+        <div className="card" >
+          <h3>Example 4: </h3>
+          <div className="card-container">
         <PropComponentPropTypes
           city="Stockholm"
-          longitude={58.9}
-          latitude={18}
+          longitude={59.334591}
+          latitude={18.063240}
           likesPizza={true}
         />
-        <hr />
+        <PropComponentPropTypes
+          city="Gothenburg"
+          longitude={11.974560}
+          latitude={57.708870}
+          likesPizza={true}
+        />
+        <PropComponentPropTypes
+          city="Barcelona"
+          longitude={2.154007}
+          latitude={41.390205}
+          likesPizza={false}
+        />
+        <PropComponentPropTypes
+          city="Nice"
+          longitude={7.289429}
+          latitude={43.675819}
+          likesPizza={false}
+        />
+        </div>
+        </div>
+        <div className="card">
+          <h3>Example 5:</h3>
         <Component />
-        <hr />
+        </div>
+      </div>
       </div>
     </>
   );

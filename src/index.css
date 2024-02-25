@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,6 +23,13 @@ a:hover {
   color: #535bf2;
 }
 
+.examples {
+  text-align: left;
+  margin-top: 10em;
+  background-color: lightyellow;
+  padding: 2em;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -34,7 +41,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
 }
+
+h2 {
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
 
 button {
   border-radius: 8px;
@@ -105,17 +118,32 @@ button:focus-visible {
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
+  padding-bottom: 2em;
+  border-color: darkslategrey;
+  border-width: 2px;
+  border-style: dashed;
+  margin-bottom: 1em;
+  border-radius: 15px;
 }
 
 .read-the-docs {
   color: #888;
 }
 
-/* Bio Comp */
-.bioComp {
-  border: 1px solid red;
+/* City card */
+.city {
+  border: 1px solid grey;
   margin-bottom: 1em;
+  padding-left: 1em;
+  width: 400px;
+  margin-right: 1em;
+  flex-grow: 1;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .dog-card,

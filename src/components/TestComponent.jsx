@@ -26,7 +26,7 @@ export const TestComponent = () => {
 
   return (
     <>
-    <p>Sunset in Stockholm {Date() < Date(sunData.sunset) ? "is" : "was"} at {formatTime(sunData.sunset)} today.</p>
+    <h2>Sunset in Stockholm {Date() < Date(sunData.sunset) ? "is" : "was"} at {formatTime(sunData.sunset)} today.</h2>
     </>
   )
 }

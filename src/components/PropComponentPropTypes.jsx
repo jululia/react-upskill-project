@@ -24,7 +24,7 @@ export const PropComponentPropTypes = ({
 PropComponentPropTypes.propTypes = {
   city: PropTypes.string.isRequired,
   longitude: PropTypes.number.isRequired,
-  latitude: PropTypes.string.isRequired,
+  latitude: PropTypes.number.isRequired,
   likesPizza: PropTypes.bool,
 };
 

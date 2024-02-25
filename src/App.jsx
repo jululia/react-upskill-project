@@ -26,13 +26,8 @@ export const App = () => {
   const appContent = {
     heading: "All about the Sun",
     intro: "This app will show some interesting (and current) stats about the sun. Stay tuned for more!", 
-    reactivedataExampleOne:
-      "Here is an example on how a simple reactHook works using a counter",
-    reactivedataExampleTwo:
-      "Here is an example on how a simple reactHook works using a button to change the name on screen",
-    reactivedataExampleThree:
-      "Before you decide to delete all components and start from scratch, we suggest examining them closely to grasp their structure. They can act as a blueprint for your future work.",
-    componentInfo: " Here is some component examples:",
+    componentInfo:
+      "Example components below. These will be removed later, but are good to keep as reference for now:",
   };
   return (
     <>
@@ -44,51 +39,25 @@ export const App = () => {
       <TestComponent />
       {/* <p>{appContent.reactivedataExampleThree}</p> */}
       <div className="card">
-        <p>{appContent.reactivedataExampleOne}</p>
+        <p>{appContent.componentInfo}</p>
         <button onClick={addOne}>count is {count}</button>
         <hr />
-        <p>{appContent.reactivedataExampleTwo}</p>
         <h3>{name}</h3>
         <button onClick={handleNameUpdate}>Change Name</button>
         <hr />
       </div>
       <div>
-        <h2>{appContent.componentInfo}</h2>
         <StaticComponent />
         <hr />
         <PropComponentPropTypes
-          name="Julia"
-          age={35}
-          birthplace="Uppsala, Sweden"
-          likesPizza={false}
-        />
-        <PropComponent
-          name="Diego"
-          age={32}
-          birthplace="Valencia, Venezuela"
+          city="Stockholm"
+          longitude={58.9}
+          latitude={18}
           likesPizza={true}
-        />
-        <PropComponent
-          name="Matilda"
-          age={32}
-          birthplace="Kalmar, Sweeden"
-          likesPizza={false}
-        />
-        <PropComponent
-          name="Theres"
-          age={34}
-          birthplace="Landvetter, Sweeden"
-          likesPizza={false}
         />
         <hr />
         <Component />
         <hr />
-        <PropComponentPropTypes
-          name="Jennie"
-          age={35}
-          birthplace="Kalmar, Sweeden"
-          likesPizza={false}
-        />
       </div>
     </>
   );

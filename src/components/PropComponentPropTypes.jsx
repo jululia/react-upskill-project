@@ -1,31 +1,30 @@
 import PropTypes from "prop-types";
 
 export const PropComponentPropTypes = ({
-  name,
-  age,
-  birthplace,
+  city,
+  longitude,
+  latitude,
   likesPizza,
 }) => {
   return (
     <div className="bioComp">
-      <h2>My little Bio:</h2>
-      <p>My name is {name}</p>
-      <p>I am {age} year's old</p>
-      <p>I was born in {birthplace}</p>
-      <strong>Do you like pineapple pizza?</strong>
+      <h2>{city}</h2>
+      <p>Longitude {longitude}</p>
+      <p>Latitude {latitude}</p>
+      <strong>Is pineapple pizza a thing there?</strong>
       {likesPizza ? (
-        <p>I like pineapple pizza! 🍍🍕</p>
+        <p>Yes! 🍍🍕</p>
       ) : (
-        <p>No, I do not like pineapple pizza! 🍍🍕</p>
+        <p>No, that sounds stupid! 🍍🍕</p>
       )}
     </div>
   );
 };
 
 PropComponentPropTypes.propTypes = {
-  name: PropTypes.string.isRequired,
-  age: PropTypes.number.isRequired,
-  birthplace: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  longitude: PropTypes.number.isRequired,
+  latitude: PropTypes.string.isRequired,
   likesPizza: PropTypes.bool,
 };
 

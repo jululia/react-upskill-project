@@ -136,7 +136,7 @@ button:focus-visible {
   border: 1px solid grey;
   margin-bottom: 1em;
   padding-left: 1em;
-  width: 400px;
+  width: 250px;
   margin-right: 1em;
   flex-grow: 1;
 }

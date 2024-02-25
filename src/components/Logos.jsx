@@ -5,7 +5,7 @@ export const Logos = () => {
   return (
     <div>
       <a target="_blank">
-        <img src={sunLogo} className="logo" alt="Sun" style={{ width: 400, height: 400 }}/>
+        <img src={sunLogo} className="logo" alt="Sun" style={{ width: 300, height: 300 }}/>
       </a>
     </div>
   );

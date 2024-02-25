@@ -4,6 +4,8 @@ import { StaticComponent } from "./components/StaticComponent";
 import { PropComponent } from "./components/PropComponent";
 import { Component } from "./components/ComponentWithCss/Component";
 import { PropComponentPropTypes } from "./components/PropComponentPropTypes";
+import { TestComponent } from "./components/TestComponent";
+
 export const App = () => {
   // Example of Reactive Data using react Hook useState
   const [count, setCount] = useState(0);
@@ -39,6 +41,7 @@ export const App = () => {
       <h1>{appContent.heading}</h1>
       <p>{appContent.intro}</p>
       <hr />
+      <TestComponent />
       {/* <p>{appContent.reactivedataExampleThree}</p> */}
       <div className="card">
         <p>{appContent.reactivedataExampleOne}</p>

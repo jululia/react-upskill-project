@@ -34,7 +34,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 250çpx;
   min-height: 100vh;
 }
 
@@ -136,7 +136,7 @@ button:focus-visible {
   border: 1px solid grey;
   margin-bottom: 1em;
   padding-left: 1em;
-  width: 250px;
+  width: 150px;
   margin-right: 1em;
   flex-grow: 1;
 }

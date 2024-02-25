@@ -1,10 +1,10 @@
-# Project Title
+# All about the sun
 
-Simple overview of use/purpose.
+I'm creating this app to learn the main concepts of react. 
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+I will be using an api which provides timestamps for sunrise, sunset and other sun related data points, based on location. The app is WIP. 
 
 ## Getting Started
 
@@ -56,14 +56,14 @@ Describe here in detail the weekly implementations
 ### Week 1 Progress
 
 - **What did I implement this week?**
-  - [ ] Feature A
-  - [ ] Feature B
-  - [ ] Bug fixes
-  - [ ] Refactoring
-  - [ ] The implementations above are examples, delete them and add yours
+  - [x] Updated the readme file to reflect what I will be doing
+  - [x] Changed the logo to a sun
+  - [x] Found an api I could use [Sunrise Sunset](https://sunrise-sunset.org/api)
+  - [x] Set up my project directory
+
 - **What obstacles or roadblocks did I face this week?**
 
-  - [ ] Technical challenges
+  - [x] Technical challenges (Had trouble with git authentication, issues with logging into Netlify, but both solved now)
   - [ ] Time constraints
   - [ ] Communication issues
   - [ ] Other (please specify)

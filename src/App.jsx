@@ -7,7 +7,7 @@ import { PropComponentPropTypes } from "./components/PropComponentPropTypes";
 export const App = () => {
   // Example of Reactive Data using react Hook useState
   const [count, setCount] = useState(0);
-  const [name, setName] = useState("Diego Zito");
+  const [name, setName] = useState("Julia");
 
   // Function expression to showcase reactiveData in action
   const addOne = () => setCount((count) => count + 1);
@@ -22,7 +22,8 @@ export const App = () => {
 
   // Staticc Data Inyected through {} reference
   const appContent = {
-    heading: "Vite + React Technigo Boilerplate",
+    heading: "All about the Sun",
+    intro: "This app will show some interesting (and current) stats about the sun. Stay tuned for more!", 
     reactivedataExampleOne:
       "Here is an example on how a simple reactHook works using a counter",
     reactivedataExampleTwo:
@@ -36,7 +37,9 @@ export const App = () => {
       {/* Component Example */}
       <Logos />
       <h1>{appContent.heading}</h1>
-      <p>{appContent.reactivedataExampleThree}</p>
+      <p>{appContent.intro}</p>
+      <hr />
+      {/* <p>{appContent.reactivedataExampleThree}</p> */}
       <div className="card">
         <p>{appContent.reactivedataExampleOne}</p>
         <button onClick={addOne}>count is {count}</button>
@@ -50,6 +53,12 @@ export const App = () => {
         <h2>{appContent.componentInfo}</h2>
         <StaticComponent />
         <hr />
+        <PropComponentPropTypes
+          name="Julia"
+          age={35}
+          birthplace="Uppsala, Sweden"
+          likesPizza={false}
+        />
         <PropComponent
           name="Diego"
           age={32}

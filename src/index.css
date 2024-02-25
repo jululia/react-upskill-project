@@ -48,7 +48,13 @@ h2 {
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
 }
 
+p {
+  padding-right: 1em;
+}
 
+strong {
+  padding-right: 1em;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -125,6 +131,7 @@ button:focus-visible {
   border-style: dashed;
   margin-bottom: 1em;
   border-radius: 15px;
+  padding-right: 0;
 }
 
 .read-the-docs {
@@ -135,6 +142,7 @@ button:focus-visible {
 .city {
   border: 1px solid grey;
   margin-bottom: 1em;
+  margin-right: 1em;
   padding-left: 1em;
   width: 150px;
   margin-right: 1em;

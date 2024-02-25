@@ -64,7 +64,7 @@ Describe here in detail the weekly implementations
   - [ ] The implementations above are examples, delete them and add yours
 
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
-  - [x] Yes. When I open the app on my phone it is zoomed in a bit too much. Why is this? I need to zoom out manully to make sure everything fits the screen. 
+  - [x] Yes. When I open the app on my phone it is zoomed in a bit too much. Why is this? I need to zoom out manully to make sure everything fits the screen. Update, I manage to solve this by reducing the min-width, but would still be nice to have this explained and understand what best practices are. 
   - [ ] No
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours

@@ -44,20 +44,24 @@ export const App = () => {
         <p>{appContent.componentInfo}</p>
       <div className="card">
         <h3>Example 1:</h3>
+        <p>Example of using react Hook useState.</p>
         <button onClick={addOne}>count is {count}</button>
         </div>
         <div className="card">
         <h3>Example 2:</h3>
+        <p>Another example of using react Hook useState.</p>
         <h4>{name}</h4>
         <button onClick={handleNameUpdate}>Change Name</button>
       </div>
       <div>
       <div className="card">
       <h3>Example 3:</h3>
+      <p>Example of static component.</p>
         <StaticComponent />
         </div>
         <div className="card" >
           <h3>Example 4: </h3>
+          <p>Making use of props, building the same component over and over but with different intput variables/props.</p>
           <div className="card-container">
         <PropComponentPropTypes
           city="Stockholm"
@@ -87,6 +91,7 @@ export const App = () => {
         </div>
         <div className="card">
           <h3>Example 5:</h3>
+          <p>Example of using custom styling for a specific component.</p>
         <Component />
         </div>
       </div>

@@ -9,7 +9,7 @@ export const Logos = () => {
           src={sunLogo}
           className="logo"
           alt="Sun"
-          style={{ width: 150, height: 150 }}
+          style={{ width: 250, height: 250 }}
         />
       </a>
     </div>

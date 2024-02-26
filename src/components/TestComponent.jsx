@@ -24,9 +24,11 @@ export const TestComponent = () => {
         return hours + ':' + minutes;
     }
 
+    let isSunsetPast = new Date() < new Date(sunData.sunset) ? "is" : "was";
+
   return (
     <>
-    <h2>Sunset in Stockholm {Date() < Date(sunData.sunset) ? "is" : "was"} at {formatTime(sunData.sunset)} today.</h2>
+    <h2>Sunset in Stockholm {isSunsetPast} at {formatTime(sunData.sunset)} today.</h2>
     </>
   )
 }

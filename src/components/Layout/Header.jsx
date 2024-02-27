@@ -17,12 +17,12 @@ export const Header = () => {
     }, []);
 
     const startScrolling = 250
-    const calcSize = (startScrolling-scrollPosition) > 0 ? 250-0.8*scrollPosition : 50;
-    const calcFontSize = (startScrolling-scrollPosition) > 0 ? 50-scrollPosition/14 : 25;
-    const flexGrow = (startScrolling-scrollPosition) > 0 ? 1 : 0;
-    const showBottomBorder = (startScrolling- scrollPosition) > 0 ? "white" : "grey";
-    const alignText = (startScrolling- scrollPosition) > 0 ? "center" : "left";
-    const backgroudColor = (startScrolling- scrollPosition) > 0 ? "transparent" : "white";
+    const calcSize = (startScrolling-scrollPosition) > 50 ? 250-scrollPosition : 50;
+    const calcFontSize = (startScrolling-scrollPosition) > 225 ? 50-scrollPosition : 25;
+    const flexGrow = (startScrolling-scrollPosition) > 50 ? 1 : 0;
+    const showBottomBorder = (startScrolling- scrollPosition) > 50 ? "transparent" : "grey";
+    const alignText = (startScrolling- scrollPosition) > 50 ? "center" : "left";
+    const backgroudColor = (startScrolling- scrollPosition) > 50 ? "transparent" : "white";
 
     // const myStyle = {
     //     color: 'red',
@@ -32,7 +32,7 @@ export const Header = () => {
     return (
         <div className="header" style={{borderColor:showBottomBorder, alignText: alignText, backgroundColor: backgroudColor }}>
             <img className="header-logo" src="sun.svg" width={calcSize} height={calcSize} style={{flexGrow: flexGrow} } alt="Logo" />
-            <h1 className="header-title" style={{fontSize: `${calcFontSize}px`} }>All about the sun</h1>
+            <h1 className="header-title" style={{fontSize: `${calcFontSize}px`, alignText: alignText, flexGrow: flexGrow} }>All about the sun</h1>
         </div>
     );
 };

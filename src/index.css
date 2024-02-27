@@ -191,7 +191,7 @@ button:focus-visible {
 }
 
 .header-logo {
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: width 0s ease-in-out, height 0s ease-in-out;
   padding: 7px;
   /* border-color: #1a1a1a;
   border-width: 2px;
@@ -205,6 +205,7 @@ button:focus-visible {
   /* border-color: #1a1a1a;
   border-bottom-width: 2px;
   border-bottom-style: solid; */
+  text-align: center;
   padding-left: 1em;
   padding-right: 1em;
 }

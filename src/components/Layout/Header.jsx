@@ -18,17 +18,17 @@ export const Header = () => {
 
     const startScrolling = 250
     const calcSize = (startScrolling-scrollPosition) > 50 ? 250-scrollPosition : 50;
-    const calcFontSize = (startScrolling-scrollPosition) > 225 ? 50-scrollPosition : 25;
-    const flexGrow = (startScrolling-scrollPosition) > 50 ? 1 : 0;
+    // const calcFontSize = (startScrolling-scrollPosition) > 225 ? 25 : 25;
+    const flexGrow = (startScrolling-scrollPosition) > 70 ? 1-scrollPosition/430*1 : 0;
     const showBottomBorder = (430- scrollPosition) > 70 ? "transparent" : "grey";
     const alignText = (430- scrollPosition) > 70 ? "center" : "center";
     const backgroudColor = (430- scrollPosition) > 70 ? "transparent" : "white";
     const divHeight =  (430- scrollPosition) > 70 ? 430-scrollPosition : 70;
-    const leftSun =  (430- scrollPosition) > 70 ? 50+40/430*scrollPosition : 90;
+    const leftSun =  (430- scrollPosition) > 70 ? 50+scrollPosition/430*40 : 90;
     const leftTitle =  (430- scrollPosition) > 70 ? 50-40/430*scrollPosition : 0;
     const transformTitle =  (430- scrollPosition) > 70 ? -50 : -50;
-    const titleTop =  (430- scrollPosition) > 70 ? 90 : 50;
-    const sunTop =  (430- scrollPosition) > 40 ? 40+scrollPosition/430*10 : 50;
+    const titleTop =  (430- scrollPosition) > 70 ? 90-scrollPosition/430*40 : 50;
+    const sunTop =  (430- scrollPosition) > 70 ? 40+scrollPosition/430*10 : 50;
     
     
 
@@ -43,7 +43,7 @@ export const Header = () => {
                 top: `${sunTop}%`} } alt="Logo" />
             <h1 className="header-title" style={{
                 // transform: `translate(${transformTitle}%, -50%)`, 
-                fontSize: `${calcFontSize}px`, 
+                // fontSize: `${calcFontSize}px`, 
                 // alignText: alignText, 
                 // flexGrow: flexGrow, 
                 left: `${50}%`,

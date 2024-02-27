@@ -5,6 +5,8 @@ import { PropComponent } from "./components/PropComponent";
 import { Component } from "./components/ComponentWithCss/Component";
 import { PropComponentPropTypes } from "./components/PropComponentPropTypes";
 import { TestComponent } from "./components/TestComponent";
+import {DataParent} from "./components/Examples/DataTypesExamplesAsProps/DataParent";
+import { Header } from "./components/Layout/Header";
 
 export const App = () => {
   // Example of Reactive Data using react Hook useState
@@ -32,9 +34,10 @@ export const App = () => {
   };
   return (
     <>
+    <Header />
       {/* Component Example */}
-      <Logos />
-      <h1>{appContent.heading}</h1>
+      <div style={{height: '430px'}}></div>
+
       <p>{appContent.intro}</p>
       <TestComponent />
       <p>{appContent.outro}</p>
@@ -93,6 +96,11 @@ export const App = () => {
           <h3>Example 5:</h3>
           <p>Example of using custom styling for a specific component.</p>
         <Component />
+        </div>
+        <div className="card">
+        <h3>Example 6:</h3>
+        <p>Example of using a parent component width many children.</p>
+          <DataParent />
         </div>
       </div>
       </div>

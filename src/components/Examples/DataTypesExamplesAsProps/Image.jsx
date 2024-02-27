@@ -1,7 +1,7 @@
 export const Image = ({ imageSrc, imageAlt }) => {
   return (
     <div>
-      <img src={imageSrc} alt={imageAlt} />
+      <img src={imageSrc} alt={imageAlt} className = "image"/>
     </div>
   );
 };

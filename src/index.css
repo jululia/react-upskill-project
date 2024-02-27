@@ -12,7 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+ 
 }
+
+
 
 a {
   font-weight: 500;
@@ -49,12 +53,13 @@ h2 {
 }
 
 p {
-  padding-right: 1em;
+  padding: 1em;
 }
 
 strong {
   padding-right: 1em;
 }
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -91,8 +96,9 @@ button:focus-visible {
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -159,4 +165,46 @@ button:focus-visible {
   padding: 2em;
   border: 1px solid red;
   margin: 1em 0;
+}
+
+.image {width: 250px;  }
+
+.header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+
+  transition: all 0.3s ease;
+  z-index: 10;
+  /* background-color: white; */
+  border-color: #1a1a1a;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+.header-logo {
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  padding: 7px;
+  /* border-color: #1a1a1a;
+  border-width: 2px;
+  border-style: solid; */
+  /* flex-grow: 1;  */
+
+}
+
+.header-title {
+  transition: font-size 0.3s ease-in-out;
+  /* border-color: #1a1a1a;
+  border-bottom-width: 2px;
+  border-bottom-style: solid; */
+  padding-left: 1em;
+  padding-right: 1em;
 }

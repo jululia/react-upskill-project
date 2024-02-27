@@ -20,18 +20,18 @@ export const DataParent = () => {
     const mm = String(today.getMonth() + 1).padStart(2, "0"); // Month is zero-based
     const dd = String(today.getDate()).padStart(2, "0");
     const yyyy = today.getFullYear();
-    const formattedDate = `${mm}-${dd}-${yyyy}`;
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
 
     alert(`Today's date is: ${formattedDate}`);
   };
 
   const person = {
-    name: "Diego Zito",
-    age: 32,
+    name: "Julia",
+    age: 35,
   };
 
-  const imageURL = `https://www.orbitarock.com/sites/default/files/styles/optimizado-820-escalable/public/articulos_2016/red_hot_chili_peppers_en_colombia.jpg?itok=EJb1nhnz`;
-  const imageAltText = "A cool picture about the Red Hot Chilli Peppers";
+  const imageURL = "https://cdn.shopify.com/s/files/1/2182/2603/files/redchilipepper.jpg?v=1669750479";
+  const imageAltText = "A cool picture of two red hot chili peppers";
 
   return (
     <div className="explanation">
@@ -50,7 +50,8 @@ export const DataParent = () => {
       <hr />
       <Boolean value={false} />
       <hr />
-      <Image imageSrc={imageURL} imageAlt={imageAltText} />
+      <Image imageSrc={imageURL} imageAlt={imageAltText }  />
+
     </div>
   );
 };

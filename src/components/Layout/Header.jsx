@@ -24,7 +24,7 @@ export const Header = () => {
     const alignText = (430- scrollPosition) > 70 ? "center" : "center";
     const backgroudColor = (430- scrollPosition) > 70 ? "transparent" : "white";
     const divHeight =  (430- scrollPosition) > 70 ? 430-scrollPosition : 70;
-    const leftSun =  (430- scrollPosition) > 70 ? 50+scrollPosition/430*40 : 90;
+    const leftSun =  (430- scrollPosition) > 0 ? 50+scrollPosition/430*40 : 90;
     const leftTitle =  (430- scrollPosition) > 70 ? 50-40/430*scrollPosition : 0;
     const transformTitle =  (430- scrollPosition) > 70 ? -50 : -50;
     const titleTop =  (430- scrollPosition) > 70 ? 90-scrollPosition/430*40 : 50;

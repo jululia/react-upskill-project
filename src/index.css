@@ -223,14 +223,60 @@ button:focus-visible {
 .header-title {
   position: absolute;
   transition: font-size 0s ease-in-out;
-  transform: translate(-50%, -100%);
   /* border-color: #1a1a1a;
   border-width: 2px;
   border-style: solid; */
-  width: 90%;
-  padding-left: 1em;
-  padding-right: 1em;
+  width: 250px;
   position: absolute;
   font-size: 25px;
-  /* top: 50% */
+  margin: 0;
 }
+
+
+
+
+/* Experimentation */
+/* .title1{
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  top: 90%; 
+  left: 50%; 
+  width: 250px;
+  height: 20px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+.title2{
+  position: absolute;
+  transform: translate(-0%, -50%); 
+  top: 50%; 
+  left: 0%; 
+  width: 250px;
+  height: 20px;
+  border-color: #1a1a1a;
+  border-width: 2px;
+  border-style: solid;
+}
+.sun1{
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  top: 40%; 
+  left: 50%; 
+  width: 250px;
+  height: 250px;
+  border-color: orange;
+  border-width: 2px;
+  border-style: solid;
+}
+.sun2{
+  position: absolute;
+  transform: translate(-100%, -50%); 
+  top: 50%; 
+  left: 100%; 
+  width: 50px;
+  height: 50px;
+  border-color: orange;
+  border-width: 2px;
+  border-style: solid;
+} */

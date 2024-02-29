@@ -16,39 +16,44 @@ export const Header = () => {
         };
     }, []);
 
-    const startScrolling = 250
-    const calcSize = (startScrolling-scrollPosition) > 50 ? 250-scrollPosition : 50;
-    // const calcFontSize = (startScrolling-scrollPosition) > 225 ? 25 : 25;
-    const flexGrow = (startScrolling-scrollPosition) > 70 ? 1-scrollPosition/430*1 : 0;
+    
+    
     const showBottomBorder = (430- scrollPosition) > 65 ? "transparent" : "lightgrey";
-    const alignText = (430- scrollPosition) > 60 ? "center" : "center";
     const backgroudColor = (430- scrollPosition) > 70 ? "transparent" : "white";
     const divHeight =  (430- scrollPosition) > 70 ? 430-scrollPosition : 70;
-    const leftSun =  (430- scrollPosition) > 70 ? 50+scrollPosition/360*40 : 90;
-    const leftTitle =  (430- scrollPosition) > 70 ? 50-40/430*scrollPosition : 0;
-    const transformTitle =  (430- scrollPosition) > 70 ? -50 : -50;
-    const titleTop =  (430- scrollPosition) > 70 ? 90-scrollPosition/360*40 : 50;
-    const sunTop =  (430- scrollPosition) > 0 ? 40+scrollPosition/430*10 : 50;
-    
-    
 
+    const sizeSun = (250-scrollPosition) > 50 ? 250-scrollPosition : 50;
+    const leftSun =  (430- scrollPosition) > 70 ? 50+scrollPosition/360*50 : 100;
+    const topSun =  (430- scrollPosition) > 0 ? 40+scrollPosition/360*10 : 50;
+    const transformSun =  (430- scrollPosition) > 70 ? -50-scrollPosition/360*50 : -100;
+
+    const leftTitle =  (430- scrollPosition) > 70 ? 50-scrollPosition/360*50 : 0;
+    const topTitle =  (430- scrollPosition) > 70 ? 90-scrollPosition/360*40 : 50;
+    const transformTitle =  (430- scrollPosition) > 70 ? -50 + scrollPosition/360*50 : -0;
+    
+    
+    
     
    
 
     return (
-        <div className="header" style={{borderColor:showBottomBorder, alignText: alignText, backgroundColor: backgroudColor, height: divHeight}}>
-            <img className="header-logo" src="sun.svg" width={calcSize} height={calcSize} style={{
-                flexGrow: flexGrow, 
+        <div className="header" style={{
+            borderColor:showBottomBorder, 
+            backgroundColor: backgroudColor, 
+            height: divHeight}}>
+            <img className="header-logo" src="sun.svg" width={sizeSun} height={sizeSun} style={{
+                transform: `translate(${transformSun}%, -50%)`, 
                 left: `${leftSun}%`,
-                top: `${sunTop}%`} } alt="Logo" />
+                top: `${topSun}%`} } alt="Logo" />
             <h1 className="header-title" style={{
-                // transform: `translate(${transformTitle}%, -50%)`, 
-                // fontSize: `${calcFontSize}px`, 
-                // alignText: alignText, 
-                // flexGrow: flexGrow, 
-                left: `${50}%`,
-                top: `${titleTop}%`
+                transform: `translate(${transformTitle}%, -50%)`, 
+                left: `${leftTitle}%`,
+                top: `${topTitle}%`
                 } }>All about the sun</h1>
+            {/* <div className='sun1'></div>
+            <div className='title1'></div>
+            <div className='sun2'></div>
+            <div className='title2'></div> */}
         </div>
     );
 };

@@ -24,7 +24,7 @@ export const Header = () => {
 
     const sizeSun = (250-scrollPosition) > 50 ? 250-scrollPosition : 50;
     const leftSun =  (430- scrollPosition) > 70 ? 50+scrollPosition/360*50 : 100;
-    const topSun =  (430- scrollPosition) > 0 ? 40+scrollPosition/360*10 : 50;
+    const topSun =  (430- scrollPosition) > 70 ? 40+scrollPosition/360*10 : 50;
     const transformSun =  (430- scrollPosition) > 70 ? -50-scrollPosition/360*50 : -100;
 
     const leftTitle =  (430- scrollPosition) > 70 ? 50-scrollPosition/360*50 : 0;

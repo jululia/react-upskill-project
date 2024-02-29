@@ -4,7 +4,7 @@
 
 ` Yes. When I open the app on my phone it is zoomed in a bit too much. Why is this? I need to zoom out manully to make sure everything fits the screen. Update, I manage to solve this by reducing the min-width, but would still be nice to have this explained and understand what best practices are.`
 
-### Teacher Input
+### Teacher Output
 
 Hey Julia, the reason here is simply due to a simple maath error:
 
@@ -13,3 +13,5 @@ both id + class of #root + .examples have a 2rem overall padding beinng applied 
 As you have done, you can switch the size much like you have done it will resolve the issue cause the img has now space to "breathe" within the documennt.
 
 P.S - line 37, of your index.css file has a typo on the value ;) it has 250çpx
+
+Thursday class.

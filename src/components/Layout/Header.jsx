@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-export const Header = () => {
+export const Header = ({
+    initialHeightOfParentDiv, 
+    finalHeightOfParentDiv, 
+    initialSizeSun
+}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleScroll = () => {
@@ -16,27 +20,31 @@ export const Header = () => {
         };
     }, []);
 
-    
-    
-    const showBottomBorder = (430- scrollPosition) > 65 ? "transparent" : "lightgrey";
-    const backgroudColor = (430- scrollPosition) > 70 ? "transparent" : "white";
-    const divHeight =  (430- scrollPosition) > 70 ? 430-scrollPosition : 70;
+    const reRender = (initialHeightOfParentDiv- scrollPosition) > finalHeightOfParentDiv
 
-    const sizeSun = (250-scrollPosition) > 50 ? 250-scrollPosition : 50;
-    const leftSun =  (430- scrollPosition) > 70 ? 50+scrollPosition/360*50 : 100;
-    const topSun =  (430- scrollPosition) > 70 ? 40+scrollPosition/360*10 : 50;
-    const transformSun =  (430- scrollPosition) > 70 ? -50-scrollPosition/360*50 : -100;
+    const divHeight =  reRender ? initialHeightOfParentDiv-scrollPosition : finalHeightOfParentDiv;
+    const showBottomBorder = reRender ? "transparent" : "lightgrey";
+    const backgroudColor = reRender ? "transparent" : "white";
 
-    const leftTitle =  (430- scrollPosition) > 70 ? 50-scrollPosition/360*50 : 0;
-    const topTitle =  (430- scrollPosition) > 70 ? 90-scrollPosition/360*40 : 50;
-    const transformTitle =  (430- scrollPosition) > 70 ? -50 + scrollPosition/360*50 : -0;
+    const finalSizeSun   = finalHeightOfParentDiv-20;
+    const sizeSun        = divHeight > (initialHeightOfParentDiv-initialSizeSun+finalSizeSun) ? initialSizeSun-scrollPosition : finalSizeSun;
     
-    
-    
-    
-   
+    const calculateCurrentValue = (initialValue, finalValue) => {
+        const currentValue = reRender ? initialValue+scrollPosition/(initialHeightOfParentDiv-finalHeightOfParentDiv)*(finalValue-initialValue) : finalValue;
+        return(currentValue)
+    };
+
+    const leftSun         = calculateCurrentValue(50, 100);
+    const topSun          = calculateCurrentValue(50, 50);
+    const transformSun    = calculateCurrentValue(-50, -100);
+
+    const leftTitle       = calculateCurrentValue(50, 0);
+    const topTitle        = calculateCurrentValue(90, 50);
+    const transformTitleX = calculateCurrentValue(-50, -0);
+    const transformTitleY = calculateCurrentValue(-50, -35);
 
     return (
+        <>
         <div className="header" style={{
             borderColor:showBottomBorder, 
             backgroundColor: backgroudColor, 
@@ -46,14 +54,16 @@ export const Header = () => {
                 left: `${leftSun}%`,
                 top: `${topSun}%`} } alt="Logo" />
             <h1 className="header-title" style={{
-                transform: `translate(${transformTitle}%, -50%)`, 
+                transform: `translate(${transformTitleX}%, ${transformTitleY}%)`, 
                 left: `${leftTitle}%`,
                 top: `${topTitle}%`
                 } }>All about the sun</h1>
-            {/* <div className='sun1'></div>
-            <div className='title1'></div>
-            <div className='sun2'></div>
-            <div className='title2'></div> */}
+            {/* <div className='sun1'></div> */}
+            {/* <div className='title1'></div> */}
+            {/* <div className='sun2'></div> */}
+            {/* <div className='title2'></div> */}
         </div>
+        <div style={{height: initialHeightOfParentDiv}}></div> {/*Added this empty div to push the rest down*/}
+        </>
     );
 };

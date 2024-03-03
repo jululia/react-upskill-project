@@ -69,11 +69,11 @@ Describe here in detail the weekly implementations
 
 - **What did I implement this week?**
 
-  - [ ] Feature A
-  - [ ] Feature B
-  - [ ] Bug fixes
-  - [ ] Refactoring
-  - [ ] The implementations above are examples, delete them and add yours
+  - [x] A component called _Header_. I made it so that the sun and the title of the app moves to what becomes a topbar as you scroll. The header takes three input parameters as props, the initial height of the div, the final height of the div (which is the height of the topbar) and the initial size of the sun. 
+  - [x] Worked on functions within the header component to calculate the positions of the sun and the main title so that they move nicely as the user scrolls. I used the ? : syntax to dictate when they should stop moving and resize. 
+  - [x] A componenet called _Intro_, which has a child component called _SunsetInStockholm_
+  - [x] A component called _Container_, this is where I will put the main content later. 
+
 
 - **What obstacles or roadblocks did I face this week?**
 
@@ -84,10 +84,15 @@ Describe here in detail the weekly implementations
   - [ ] The implementations above are examples, delete them and add yours
 
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
-  - [ ] Yes
+  - [x] Yes, see questions below.
   - [ ] No
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours
+
+- **Questions:**
+  - In the Header component I have added a div below the main div (with the same height as the main div) to push the rest of the content down. Is this how it should be done? If I don't add the extra div, the topbar will be placed right above the other content. 
+  - I imagine all values in the Header component get recalulated as soon as I scroll. Am I right in this? If yes, is this an issue? 
+  - I noticed some components work with dark mode, but the ones I've built don't. How can I make them work in dark mode too? 
 
 ### Week 3 Progress
 

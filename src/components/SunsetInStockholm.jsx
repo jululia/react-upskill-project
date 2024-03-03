@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { ReactDOM } from 'react'
 
-export const TestComponent = () => {
+export const SunsetInStockholm = () => {
 
     const [sunData, setSunData] = useState([])
 

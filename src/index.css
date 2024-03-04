@@ -12,11 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
- 
 }
-
-
 
 a {
   font-weight: 500;
@@ -52,7 +48,6 @@ h2 {
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 .intro {
   padding: 1em;
 }
@@ -71,14 +66,12 @@ strong {
   padding-right: 1em;
 }
 
-
 li {
-  list-style-position:outside;
+  list-style-position: outside;
   padding-left: 2em;
   padding-top: 0.5em;
   text-indent: -1.4em;
 }
-
 
 button {
   border-radius: 8px;
@@ -187,7 +180,9 @@ button:focus-visible {
   margin: 1em 0;
 }
 
-.image {width: 250px;  }
+.image {
+  width: 250px;
+}
 /* 
 .header {
   max-width: 1280px;
@@ -200,18 +195,18 @@ button:focus-visible {
   flex-wrap: wrap;
   justify-content: space-between;
   /* align-items: center; */
-  /* width: 100%;
+/* width: 100%;
   transition: all 0.3s ease;
   z-index: 10;
   /* background-color: white; */
-  /* border-color: #1a1a1a;
+/* border-color: #1a1a1a;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-} */ 
+} */
 
-.header{
+.header {
   position: relative;
-  width: 100%; 
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0;
@@ -237,7 +232,6 @@ button:focus-visible {
   border-width: 2px;
   border-style: solid; */
   /* flex-grow: 1;  */
-
 }
 
 .header-title {
@@ -251,11 +245,6 @@ button:focus-visible {
   font-size: 25px;
   margin: 0;
 }
-
-
-
-
-
 
 /* Experimentation */
 /* .title1{
@@ -303,7 +292,6 @@ button:focus-visible {
   border-style: solid;
 } */
 
-
 /* .sun1{
   position: absolute;
   transform: translate(-50%, -50%); 
@@ -326,5 +314,3 @@ button:focus-visible {
   border-width: 2px;
   border-style: solid;
 } */
-
-

@@ -9,6 +9,7 @@ import { DataParent } from "./components/Examples/DataTypesExamplesAsProps/DataP
 import { Header } from "./components/Layout/Header";
 import { Intro } from "./components/Layout/Intro";
 import { Container } from "./components/Layout/Container";
+import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
 
 export const App = () => {
   // Example of Reactive Data using react Hook useState
@@ -39,6 +40,7 @@ export const App = () => {
         initialSizeSun={250} />
       <Intro className="intro"/>
       <Container />
+      <ThemeToggle />
 
 
       <div className="examples">

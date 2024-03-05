@@ -23,6 +23,7 @@ export const Header = ({
   const reRender =
     initialHeightOfParentDiv - scrollPosition > finalHeightOfParentDiv;
 
+    
   const divHeight = reRender
     ? initialHeightOfParentDiv - scrollPosition
     : finalHeightOfParentDiv;

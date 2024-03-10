@@ -97,21 +97,17 @@ Describe here in detail the weekly implementations
 ### Week 3 Progress
 
 - **What did I implement this week?**
-  - [ ] Feature A
-  - [ ] Feature B
-  - [ ] Bug fixes
-  - [ ] Refactoring
-  - [ ] The implementations above are examples, delete them and add yours
-- **What obstacles or roadblocks did I face this week?**
+  - [x] Buttons which let the user pick a city, which then sets the city, latitude, longitude and timezone using useState
+  - [x] Dynamic API which uses the input parameters mentioned above, the API is triggered on change using useEffect
+  
+  **What obstacles or roadblocks did I face this week?**
 
-  - [ ] Technical challenges
-  - [ ] Time constraints
-  - [ ] Communication issues
-  - [ ] Other (please specify)
-  - [ ] The implementations above are examples, delete them and add yours
-
+  - [x] Difficult to work with timezone data, I solved my use case, but there is probably a better way to solve it. 
+  - [x] When I console logged latitude/longitude it appeared as if the state had not been updated, but I learned later that was because the console.log() was executed before the setLatitude/Longitude were done. This was not clear to me initially and a bit confusing. 
+  
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
-  - [ ] Yes
+  - [x] On row 23 in the SunsetApi.jsx file I am checking the type of "timestring". When the app is rendered for the first time there is no response from the api and without this if statement the code wouldn't work. But is there a better way to handle this? 
+  - [x] Is there a smarter way to handle the data per each city in Container.jsx? Should I have some sort of configuration file instead? Or maybe it should just be the city? And the latitude, longitude and timezone data I should fetch from an API based on the City? 
   - [ ] No
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours

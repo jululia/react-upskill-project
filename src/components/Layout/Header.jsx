@@ -28,7 +28,7 @@ export const Header = ({
     ? initialHeightOfParentDiv - scrollPosition
     : finalHeightOfParentDiv;
   const showBottomBorder = reRender ? "transparent" : "lightgrey";
-  const backgroudColor = reRender ? "transparent" : "white";
+  // const backgroudColor = reRender ? "transparent" : "white";
 
   const finalSizeSun = finalHeightOfParentDiv - 20;
   const sizeSun =
@@ -60,7 +60,7 @@ export const Header = ({
         className="header"
         style={{
           borderColor: showBottomBorder,
-          backgroundColor: backgroudColor,
+          // backgroundColor: backgroudColor,
           height: divHeight,
         }}
       >

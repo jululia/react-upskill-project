@@ -15,6 +15,9 @@ export const App = () => {
       <Container />
       {/* <ThemeToggle /> */}
       {/* <Examples /> */}
+      <div className='bottom-space' />
+      <p>That's it for now :)</p>
+      
     </>
   );
 };

@@ -161,7 +161,7 @@ button:focus-visible {
   }
 
   .header{
-    background-color:  black;
+    background-color:  #333;
   }
 
   .main-container {
@@ -250,4 +250,8 @@ button:focus-visible {
 
 .image {
   width: 250px;
+}
+
+.bottom-space {
+  height: 250px; /* Change this to the amount of space you want */
 }

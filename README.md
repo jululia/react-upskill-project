@@ -1,6 +1,6 @@
 # All about the sun
 
-I'm creating this app to learn the main concepts of react. 
+I'm creating this app to learn the main concepts of react. The app is published [here](https://all-about-the-sun.netlify.app/).
 
 ## Description
 
@@ -48,7 +48,7 @@ Describe here in detail the weekly implementations
   - [x] Changed the logo to a sun
   - [x] Found an api I could use [Sunrise Sunset](https://sunrise-sunset.org/api) and tried fetching from it
   - [x] Dynamically showing when the sun will set in Stockholm (today)
-  - [x] Used Netlify to publish the app [here](https://steady-donut-cdba16.netlify.app/)
+  - [x] Used Netlify to publish the app [https://all-about-the-sun.netlify.app/](https://all-about-the-sun.netlify.app/)
 
 
 - **What obstacles or roadblocks did I face this week?**

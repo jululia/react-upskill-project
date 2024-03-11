@@ -12,8 +12,8 @@ export const Container = () => {
 
     switch(city) {
       case 'Stockholm':
-        setLatitude(59.334591);
-        setLongitude(18.063240);
+        setLatitude(59.3294);
+        setLongitude(18.0687);
         setTimezone(1);
         break;
       case "Gothenburg":

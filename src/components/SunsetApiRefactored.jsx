@@ -25,7 +25,6 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=cloud_cover&daily=sunshine_duration`
         );
         const openMeteoJson = await openMeteoResponse.json();
-        console.log(openMeteoJson);
         setHourlyForecastData(openMeteoJson.hourly);
         setDailyForecastData(openMeteoJson.daily);
 

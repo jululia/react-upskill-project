@@ -69,19 +69,11 @@ export const SunsetApi = ({city, latitude, longitude, timezone}) => {
 
     let isSunsetPast = new Date() < new Date(sunData.sunset) ? "is" : "was";
 
-    // console.log(hourlyForecastData);
-    // console.log(dailyForecastData);
-
     //Creating an array of objects where each object includes a time and sunshine_duration pair
     const dataArray = dailyForecastData.time.map((time, i) => ({
         time,
         sunshine: dailyForecastData.sunshine_duration[i]
     }));
-
-    
-
-
-
 
       
 

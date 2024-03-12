@@ -14,7 +14,7 @@ export const App = () => {
       <Intro className="intro"/>
       <Container />
       {/* <ThemeToggle /> */}
-      {/* <Examples /> */}
+      <Examples />
       <div className='bottom-space' />
       <p>That's it for now :)</p>
       

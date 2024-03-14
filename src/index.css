@@ -129,7 +129,6 @@ button:focus-visible {
   position: absolute;
   transition: font-size 0.1s ease-in-out;
   width: 250px;
-  position: absolute;
   font-size: 25px;
   margin: 0;
 }
@@ -227,12 +226,12 @@ button:focus-visible {
 
 /* City card */
 .city {
-  border: 1px solid grey;
-  margin-bottom: 1em;
-  margin-right: 1em;
-  padding-left: 1em;
+  /* border: 1px solid grey; */
+  /* margin-bottom: 1em;
+  margin-right: 1em; */
+  /* padding-left: 1em; */
   width: 150px;
-  margin-right: 1em;
+  margin: 0.5em;
   flex-grow: 1;
 }
 
@@ -254,4 +253,10 @@ button:focus-visible {
 
 .bottom-space {
   height: 800px; /* Change this to the amount of space you want */
+}
+
+.sun {
+  position: relative;
+  width: 25px;
+  top: 0%;
 }

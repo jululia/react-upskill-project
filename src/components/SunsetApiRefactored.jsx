@@ -97,12 +97,23 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
     sunshine: dailyForecastData.sunshine_duration[i],
   }));
 
-  const dataArrayHourly = hourlyForecastData.time.map((time, i) => ({
-    time,
-    date: time.slice(0, -6),
-    hour: new Date(time).getHours(),
-    sunshine: (new Date(time).getHours() > sunrise && new Date(time).getHours() <= (sunset )) ? 100 - hourlyForecastData.cloud_cover[i] : 0
-  }));
+  const dataArrayHourly = hourlyForecastData.time.map((time, i) => {
+    
+    const date = time.slice(0, -6)
+    const hour = new Date(time).getHours()
+    const altitude = calculateSunAltitude(date, hour, latitude, longitude);
+    console.log(altitude);
+    return {
+
+      time,
+      date: date,
+      hour: hour,
+      sunshine: (new Date(time).getHours() > sunrise && new Date(time).getHours() <= (sunset )) ? 100 - hourlyForecastData.cloud_cover[i] : null,
+      altitude: altitude
+
+    }
+
+  });
 
   let combined = dataArray.map(dailyData => {
     let hourlyDataForDay = dataArrayHourly.filter(hourlyData => hourlyData.date === dailyData.date);
@@ -133,21 +144,6 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
           <h2>
             Sunset in {city} {isSunsetPast} at {formattedSunsetTime} today.
           </h2>
-
-          {/* <div className="weather-forecast">
-            {dataArray.map((data, index) => (
-              <div key={index}>
-                <p>{data.date}</p>
-                <img
-                  src="sun.svg"
-                  style={{
-                    height: data.sunshine / 1000 + "px",
-                    width: data.sunshine / 1000 + "px"
-                  }}
-                />
-              </div>
-            ))}
-          </div> */}
           <div className="card-container">
             {combined.map((data, index) => (
               <div key={index} className="card-forecast">
@@ -157,27 +153,13 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
                   display: 'flex', justifyContent: 'space-between', paddingLeft: '3px'//,
                   // border: '1px solid black'
                 }}>
-                  
-                  {/* <div style={{//border: '1px solid black', 
-                  width: '40px',        
-                  display: 'flex', 
-                    justifyContent: 'center', 
-                    alignItems: 'center'}}>
-                <img
-                  src="sun.svg"
-                  style={{
-                    height: data.dailySunshine / 1000 + "px",
-                    width: data.dailySunshine / 1000 + "px"
-                  }}
-                />
-                </div> */}
                   {data.hourlyForecast.map((data, index) => (
                     <div key={index} style={{
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
                       // border: '1px solid blue',
-                      height: 75,
+                      height: 35,
                       width: 1
                     }}>
                       <img className="sun"
@@ -185,7 +167,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
                         style={{
                           height: data.sunshine / 8 + "px",
                           width: data.sunshine / 8 + "px",
-                          top: `${(1-calculateSunAltitude(data.date, data.hour, latitude, longitude))*20-15}%`,
+                          top: `${(1-data.altitude)*35-20}px`,
                         }}
                       />
                     </div>

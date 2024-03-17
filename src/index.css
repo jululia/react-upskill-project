@@ -12,8 +12,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-
 }
 
 a {
@@ -209,59 +207,39 @@ button:focus-visible {
   }
 }
 
-.card {
-  padding: 1em;
-  padding-bottom: 2em;
-  border-color: darkslategrey;
-  border-width: 2px;
-  border-style: dashed;
-  margin-bottom: 1em;
-  border-radius: 15px;
-  padding-right: 0;
-}
 
-.read-the-docs {
-  color: #888;
-}
 
-/* City card */
+
 .card-forecast {
   /* border: 1px solid grey; */
   /* margin-bottom: 1em;
   margin-right: 1em; */
   /* padding-left: 1em; */
-  width: 150px;
-  margin: 0.5em;
-  flex-grow: 1;
-  position: relative;
+  width: 100%;
+  margin: 0em;
+  border-bottom: 0.5px solid white;
+  margin-bottom: 1em;
+  /* flex-grow: 1;
+  position: relative; */
   
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 0px; /* adjust as needed */
+  padding: 0px;
 }
 
 .horizon {
   position: absolute;
-  z-index: 2;
-  background-color: #d6f4fc;
-  bottom: 0;
+  z-index: 3;
+  background-color: green;
   left: -5%;
   width: 110%;
-  height: 30px;
+  height: 50px;
 }
 
-.dog-card,
-.shopping-card {
-  padding: 2em;
-  border: 1px solid red;
-  margin: 1em 0;
-}
-
-.image {
-  width: 250px;
-}
 
 .bottom-space {
   height: 800px; /* Change this to the amount of space you want */

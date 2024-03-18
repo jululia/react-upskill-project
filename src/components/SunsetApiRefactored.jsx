@@ -1,20 +1,11 @@
 import { useState, useEffect } from "react";
-import SunCalc from 'suncalc';
+
+import { CalculateSunAltitude } from "./Functions/CalculateSunAltitude";
 
 export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
 
-
-  const calculateSunAltitude = (date, hour, lat, lng) => {
-    let newDate = new Date(date);
-    newDate.setHours(hour-timezone);
-
-    let sunPosition = SunCalc.getPosition(newDate, lat, lng);
-
-    return sunPosition.altitude;
-}
-
-  const[sunset, setSunset] = useState();
-  const[sunrise, setSunrise] = useState();
+  const [sunset, setSunset] = useState();
+  const [sunrise, setSunrise] = useState();
   const [sunData, setSunData] = useState([]);
   const [dailyForecastData, setDailyForecastData] = useState({
     time: [],
@@ -61,11 +52,11 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
       );
       setSunset(sunsetShort.getHours());
       setSunrise(sunriseShort.getHours());
-       setFormattedSunsetTime(formattedTime);
+      setFormattedSunsetTime(formattedTime);
     }
   }, [latitude, longitude, sunData.sunset, timezone]);
 
-  function formatTime(timeString) {
+  const formatTime = (timeString) => {
     let string;
 
     if (timeString) {
@@ -98,17 +89,17 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
   }));
 
   const dataArrayHourly = hourlyForecastData.time.map((time, i) => {
-    
+
     const date = time.slice(0, -6)
     const hour = new Date(time).getHours()
-    const altitude = calculateSunAltitude(date, hour, latitude, longitude);
-    console.log(altitude);
+    const altitude = CalculateSunAltitude(date, hour, latitude, longitude, timezone);
+    
     return {
 
       time,
       date: date,
       hour: hour,
-      sunshine: (new Date(time).getHours() > sunrise && new Date(time).getHours() <= (sunset )) ? 100 - hourlyForecastData.cloud_cover[i] : null,
+      sunshine: (new Date(time).getHours() > sunrise && new Date(time).getHours() <= (sunset)) ? 100 - hourlyForecastData.cloud_cover[i] : null,
       altitude: altitude
 
     }
@@ -167,7 +158,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
                         style={{
                           height: data.sunshine / 8 + "px",
                           width: data.sunshine / 8 + "px",
-                          top: `${(1-data.altitude)*35-20}px`,
+                          top: `${(1 - data.altitude) * 35 - 20}px`,
                         }}
                       />
                     </div>

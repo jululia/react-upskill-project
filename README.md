@@ -115,22 +115,19 @@ Describe here in detail the weekly implementations
 ### Week 4 Progress
 
 - **What did I implement this week?**
-  - [ ] Feature A
-  - [ ] Feature B
-  - [ ] Bug fixes
-  - [ ] Refactoring
-  - [ ] The implementations above are examples, delete them and add yours
-- **What obstacles or roadblocks did I face this week?**
+  - [x] Tried D3.js for data visualization
+  - [x] Explored how to map data to layout attributes
+
+  **What obstacles or roadblocks did I face this week?**
 
   - [ ] Technical challenges
   - [ ] Time constraints
   - [ ] Communication issues
   - [ ] Other (please specify)
-  - [ ] The implementations above are examples, delete them and add yours
 
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
   - [ ] Yes
-  - [ ] No
+  - [x] No, I have just explored myself, don't have anything specific to ask
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours
 

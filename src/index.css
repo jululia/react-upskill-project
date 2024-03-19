@@ -149,6 +149,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 
+  .bar {
+    fill: rgb(186, 222, 132);
+  }
+
+  .x-axis {
+    color: #333;
+  }
+  
+  .y-axis {
+    color: #333;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -163,6 +175,18 @@ button:focus-visible {
 
   .main-container {
     background-color: #1b2949;
+  }
+
+  .bar {
+    fill: rgb(186, 222, 132);
+  }
+  
+  .x-axis {
+    color: white;
+  }
+  
+  .y-axis {
+    color: white;
   }
 
 }
@@ -254,3 +278,4 @@ button:focus-visible {
 .chart-wrapper {
   flex-grow: 1;
 }
+

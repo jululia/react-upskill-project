@@ -250,3 +250,7 @@ button:focus-visible {
   width: 25px;
   top: 0%;
 }
+
+.chart-wrapper {
+  flex-grow: 1;
+}

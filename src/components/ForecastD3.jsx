@@ -1,12 +1,12 @@
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-export const BarChartD3 = ({ data, height, width }) => {
+export const ForecastD3 = ({ data, height, width }) => {
   const ref = useRef();
-  const marginTop = 60;
+  const marginTop = 10;
   const marginRight = 10;
-  const marginBottom = 30;
-  const marginLeft = 30;
+  const marginBottom = 10;
+  const marginLeft = 10;
 
   useEffect(() => {
     const svg = d3.select(ref.current).select('.chart-area');

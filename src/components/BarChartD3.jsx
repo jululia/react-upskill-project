@@ -50,7 +50,7 @@ export const BarChartD3 = ({ data, height, width }) => {
 
   return (
     <div className="chart-wrapper">
-      <svg ref={ref} style={{ backgroundColor: 'white', overflow: 'visible', height: `${height}px`, width: `${width}px` }}>
+      <svg ref={ref} style={{ overflow: 'visible', height: `${height}px`, width: `${width}px` }}>
         <g className="chart-area">
           <g className="x-axis" />
           <g className="y-axis" />

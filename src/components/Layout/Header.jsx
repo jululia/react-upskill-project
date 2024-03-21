@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 export const Header = ({
   initialHeightOfParentDiv,
   finalHeightOfParentDiv,
   initialSizeSun,
 }) => {
+
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   const handleScroll = () => {
     const position = window.scrollY;
@@ -23,7 +26,7 @@ export const Header = ({
   const reRender =
     initialHeightOfParentDiv - scrollPosition > finalHeightOfParentDiv;
 
-    
+
   const divHeight = reRender
     ? initialHeightOfParentDiv - scrollPosition
     : finalHeightOfParentDiv;
@@ -39,8 +42,8 @@ export const Header = ({
   const calculateCurrentValue = (initialValue, finalValue) => {
     const currentValue = reRender
       ? initialValue +
-        (scrollPosition / (initialHeightOfParentDiv - finalHeightOfParentDiv)) *
-          (finalValue - initialValue)
+      (scrollPosition / (initialHeightOfParentDiv - finalHeightOfParentDiv)) *
+      (finalValue - initialValue)
       : finalValue;
     return currentValue;
   };
@@ -64,18 +67,37 @@ export const Header = ({
           height: divHeight,
         }}
       >
-        <img
-          className="header-logo"
-          src="sun.svg"
-          width={sizeSun}
-          height={sizeSun}
-          style={{
-            transform: `translate(${transformSun}%, -50%)`,
-            left: `${leftSun}%`,
-            top: `${topSun}%`,
-          }}
-          alt="Logo"
-        />
+        <div onClick={() => setMenuVisible(!menuVisible)} >
+          <img
+            className="header-logo"
+            src="sun.svg"
+            width={sizeSun}
+            height={sizeSun}
+            style={{
+              transform: `translate(${transformSun}%, -50%)`,
+              left: `${leftSun}%`,
+              top: `${topSun}%`,
+            }}
+            alt="Logo"
+          />
+        </div>
+        {menuVisible && (
+          <div className="menu">
+        <ul>
+           <li>
+            <Link to="/" onClick={() => setMenuVisible(false)}>Home</Link>
+          </li>
+   
+          <li>
+            <Link to="/examples" onClick={() => setMenuVisible(false)}>Examples</Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={() => setMenuVisible(false)}>About</Link>
+          </li>
+          {/* Add more links as needed */}
+        </ul>
+        </div>
+      )}
         <h1
           className="header-title"
           style={{

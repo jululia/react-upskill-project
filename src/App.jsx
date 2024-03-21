@@ -1,27 +1,17 @@
-import { Header } from "./components/Layout/Header";
-import { Intro } from "./components/Layout/Intro";
-import { Container } from "./components/Layout/Container";
-//import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
-//import { Examples } from "./components/Examples";
-
-import { BarChartWrapper } from "./components/BarChartWrapper";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { routes } from "./routes/routes";
+import { NavBarLink } from "./components/NavBarLink";
 
 export const App = () => {
-
   return (
     <>
-      <Header
-        initialHeightOfParentDiv={430}
-        finalHeightOfParentDiv={70}
-        initialSizeSun={250} />
-      <Intro className="intro"/>
-      <Container />
-      {/* <ThemeToggle /> */}
-      {/* <Examples /> */}
-      <BarChartWrapper />
-      <div className='bottom-space' />
-      <p>That's it for now :)</p>
-      
+      <BrowserRouter>
+        <NavBarLink />
+        <div className="card">
+          <Routes>{routes}</Routes>
+        </div>
+      </BrowserRouter>
+
     </>
   );
 };

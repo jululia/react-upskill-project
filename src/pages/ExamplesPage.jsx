@@ -5,6 +5,7 @@ import { BarChartWrapper } from "../components/BarChartWrapper";
 export const ExamplesPage = () => {
     return (
         <>
+            <div className="intro"></div>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi iste cum veritatis minima maxime impedit assumenda, voluptate sint excepturi neque quo sequi repellat, esse corporis nihil, animi necessitatibus officiis repudiandae.
             <ThemeToggle />
             <BarChartWrapper />

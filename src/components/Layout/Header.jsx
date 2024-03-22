@@ -59,11 +59,9 @@ export const Header = ({
 
   return (
     <>
-      <div
-        className="header"
+      <div className="header"
         style={{
           borderColor: showBottomBorder,
-          // backgroundColor: backgroudColor,
           height: divHeight,
         }}
       >
@@ -81,24 +79,7 @@ export const Header = ({
             alt="Logo"
           />
         </div>
-        {menuVisible && (
-          // <div className="menu">
-            <ul className="menu">
-              <Link to="/" onClick={() => setMenuVisible(false)}>
-                <li>Home</li>
-              </Link>
-
-              <Link to="/examples" onClick={() => setMenuVisible(false)}>
-                <li>Examples</li>
-              </Link>
-
-              <Link to="/about" onClick={() => setMenuVisible(false)}>
-                <li>About</li>
-              </Link>
-              {/* Add more links as needed */}
-            </ul>
-          //</div >
-        )}
+ 
         <h1
           className="header-title"
           style={{
@@ -109,13 +90,23 @@ export const Header = ({
         >
           All about the sun
         </h1>
-        {/* <div className='sun1'></div> */}
-        {/* <div className='title1'></div> */}
-        {/* <div className='sun2'></div> */}
-        {/* <div className='title2'></div> */}
       </div >
+      <div className="menu">
+          <ul className={menuVisible ? 'visible' : ''}>
+            <Link to="/" onClick={() => setMenuVisible(false)}>
+              <li>Home</li>
+            </Link>
+            <Link to="/examples" onClick={() => setMenuVisible(false)}>
+              <li>Examples</li>
+            </Link>
+            <Link to="/about" onClick={() => setMenuVisible(false)}>
+              <li>About</li>
+            </Link>
+          </ul>
+        </div >
       <div style={{ height: initialHeightOfParentDiv }}></div>{" "}
-      {/*Added this empty div to push the rest down*/}
+
+
     </>
   );
 };

@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "../components/Layout/Header";
-// import { RandomErrorComp } from "./RandomErrorComp";
 import { useLocation } from 'react-router-dom';
+import { useState } from "react";
 
 export const NavBarLink = () => {
 
     const location = useLocation();
+    let [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+        setCounter(++counter);
+      }, [location]);
 
     return (
         <div>
-            {/* <RandomErrorComp /> */}
             <nav>
                 <Header
-                    initialHeightOfParentDiv={location.pathname === '/' ? 430 : 70}
+                    initialHeightOfParentDiv={location.pathname === '/' & counter <=2 ? 430 : 70}
                     finalHeightOfParentDiv={70}
-                    initialSizeSun={location.pathname === '/' ? 250 : 50} />
+                    initialSizeSun={location.pathname === '/' & counter <=2 ? 250 : 50} />
             </nav>
         </div>
     );

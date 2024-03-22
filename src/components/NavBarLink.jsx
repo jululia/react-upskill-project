@@ -1,19 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Header } from "../components/Layout/Header";
 // import { RandomErrorComp } from "./RandomErrorComp";
 import { useLocation } from 'react-router-dom';
-import { useState } from "react";
 
 export const NavBarLink = () => {
-
-    const [menuVisible, setMenuVisible] = useState(false);
-
-    const links = [
-        { to: "/", text: "Home Page " },
-        { to: "/about", text: "About Page" },
-        { to: "/examples", text: "Examples" }
-    ];
 
     const location = useLocation();
 

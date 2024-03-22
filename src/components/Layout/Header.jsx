@@ -82,22 +82,23 @@ export const Header = ({
           />
         </div>
         {menuVisible && (
-          <div className="menu">
-        <ul>
-           <li>
-            <Link to="/" onClick={() => setMenuVisible(false)}>Home</Link>
-          </li>
-   
-          <li>
-            <Link to="/examples" onClick={() => setMenuVisible(false)}>Examples</Link>
-          </li>
-          <li>
-            <Link to="/about" onClick={() => setMenuVisible(false)}>About</Link>
-          </li>
-          {/* Add more links as needed */}
-        </ul>
-        </div>
-      )}
+          // <div className="menu">
+            <ul className="menu">
+              <Link to="/" onClick={() => setMenuVisible(false)}>
+                <li>Home</li>
+              </Link>
+
+              <Link to="/examples" onClick={() => setMenuVisible(false)}>
+                <li>Examples</li>
+              </Link>
+
+              <Link to="/about" onClick={() => setMenuVisible(false)}>
+                <li>About</li>
+              </Link>
+              {/* Add more links as needed */}
+            </ul>
+          //</div >
+        )}
         <h1
           className="header-title"
           style={{
@@ -112,7 +113,7 @@ export const Header = ({
         {/* <div className='title1'></div> */}
         {/* <div className='sun2'></div> */}
         {/* <div className='title2'></div> */}
-      </div>
+      </div >
       <div style={{ height: initialHeightOfParentDiv }}></div>{" "}
       {/*Added this empty div to push the rest down*/}
     </>

@@ -66,12 +66,6 @@ strong {
   padding-right: 1em;
 }
 
-li {
-  list-style-position: outside;
-  padding-left: 2em;
-  padding-top: 0.5em;
-  text-indent: -1.4em;
-}
 
 button {
   border-radius: 8px;
@@ -125,6 +119,7 @@ button:focus-visible {
   transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
   padding: 15px;
   top: 50%;
+  z-index: 5;
 }
 
 .header-title {
@@ -288,28 +283,35 @@ button:focus-visible {
 
 ul {
   position: absolute;
-  top: 100%;
+  top: 25%;
   right: 0;
   background-color: #f9f9f9;
-  min-width: 200px;
-  border: 1px solid #ccc;
-  padding: 5px 16px;
+  min-width: 150px;
+  border: 1px solid #474343;
+  padding: 5px;
   z-index: 1;
   list-style-type: none;
   text-align: left;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  border-radius: 15px;
+  margin-right: 40px;
+  
 }
 
 ul li {
-  padding: 12px 16px;
+  padding: 12px;
+  color: #333;
 }
 
 ul li:hover {
-  background-color: #f1f1f1;
+  background-color: rgb(243, 243, 196);
+  border-radius: 10px;
 }
 
 ul li a {
-  color: black;
+  color: #333;
   text-decoration: none;
 }
+
+
 

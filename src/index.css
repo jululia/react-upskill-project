@@ -281,12 +281,13 @@ button:focus-visible {
 
 ul {
   position: fixed;
-  top: -15%;
+  top: -25%;
   right: 0;
   background-color: #f9f9f9;
   min-width: 120px;
   border: 1px solid #474343;
   padding: 5px;
+  padding-top: 50px;
   list-style-type: none;
   text-align: right;
   /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
@@ -322,6 +323,7 @@ ul.visible  {
 .menu {
   position: relative;
   z-index: 5;
+  padding-top: 50;
 }
 
 

@@ -20,7 +20,6 @@ export const CityInfoPage = () => {
       <h1>{cityInfo.name}</h1>
       <p>Longitude: {cityInfo.longitude}</p>
       <p>Latitude: {cityInfo.latitude}</p>
-      <p> {city}</p>
       <div className='bottom-space' />
       <p>That's it for now :)</p>
     </>

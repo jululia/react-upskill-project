@@ -9,6 +9,7 @@ export const NavBarLink = () => {
     let [counter, setCounter] = useState(0);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setCounter(++counter);
       }, [location]);
 

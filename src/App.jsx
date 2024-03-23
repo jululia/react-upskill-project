@@ -7,9 +7,7 @@ export const App = () => {
     <>
       <BrowserRouter>
         <NavBarLink />
-        <div className="card">
           <Routes>{routes}</Routes>
-        </div>
       </BrowserRouter>
 
     </>

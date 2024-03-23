@@ -1,44 +1,64 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { CalculateSunAltitude } from "./Functions/CalculateSunAltitude";
 
 export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
+
+  const [sunset, setSunset] = useState();
+  const [sunrise, setSunrise] = useState();
   const [sunData, setSunData] = useState([]);
   const [dailyForecastData, setDailyForecastData] = useState({
-    time: [
-      "2024-03-11",
-      "2024-03-12",
-      "2024-03-13",
-      "2024-03-14",
-      "2024-03-15",
-      "2024-03-16",
-      "2024-03-17",
-    ],
-    sunshine_duration: [
-      25788.72, 38663.58, 38769.25, 38872.77, 23359.88, 38510.79, 1136.05,
-    ],
+    time: [],
+    sunshine_duration: [],
   });
-  const [hourlyForecastData, setHourlyForecastData] = useState();
+  const [hourlyForecastData, setHourlyForecastData] = useState({
+    time: [],
+    cloud_cover: [],
+  });
+  const [formattedSunsetTime, setFormattedSunsetTime] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://api.sunrise-sunset.org/json?lat=${latitude}%&lng=${longitude}%&tzid=Europe/Lisbon&formatted=0`
-    )
-      .then((res) => res.json())
-      .then((json) => setSunData(json.results));
+    const fetchData = async () => {
+      try {
+        const sunriseSunsetResponse = await fetch(
+          `https://api.sunrise-sunset.org/json?lat=${latitude}%&lng=${longitude}%&tzid=Europe/Lisbon&formatted=0`
+        );
+        const sunriseSunsetJson = await sunriseSunsetResponse.json();
+        setSunData(sunriseSunsetJson.results);
 
-    fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=cloud_cover&daily=sunshine_duration`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setHourlyForecastData(json.hourly);
-        setDailyForecastData(json.daily);
-      });
-  }, [latitude, longitude]);
+        const openMeteoResponse = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=cloud_cover&daily=sunshine_duration`
+        );
+        const openMeteoJson = await openMeteoResponse.json();
+        setHourlyForecastData(openMeteoJson.hourly);
+        setDailyForecastData(openMeteoJson.daily);
 
-  function formatTime(timeString) {
-    let string = "?";
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-    if (typeof timeString == "string") {
+    fetchData();
+
+    if (sunData.sunset) {
+      const formattedTime = formatTime(sunData.sunset);
+      let sunsetUTC = new Date(sunData.sunset);
+      const sunsetShort = new Date(
+        sunsetUTC.getTime() + timezone * 60 * 60 * 1000
+      );
+      let sunriseUTC = new Date(sunData.sunrise);
+      const sunriseShort = new Date(
+        sunriseUTC.getTime() + timezone * 60 * 60 * 1000
+      );
+      setSunset(sunsetShort.getHours());
+      setSunrise(sunriseShort.getHours());
+      setFormattedSunsetTime(formattedTime);
+    }
+  }, [latitude, longitude, sunData.sunset, timezone]);
+
+  const formatTime = (timeString) => {
+    let string;
+
+    if (timeString) {
       // Stripping the timezone to get UTC
       timeString = timeString.substring(0, timeString.length - 6);
       let sunsetUTC = new Date(timeString);
@@ -59,35 +79,97 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
     return string;
   }
 
-
   let isSunsetPast = new Date() < new Date(sunData.sunset) ? "is" : "was";
 
   //Creating an array of objects where each object includes a time and sunshine_duration pair
   const dataArray = dailyForecastData.time.map((time, i) => ({
-    time,
+    date: time,
     sunshine: dailyForecastData.sunshine_duration[i],
   }));
+
+  const dataArrayHourly = hourlyForecastData.time.map((time, i) => {
+
+    const date = time.slice(0, -6)
+    const hour = new Date(time).getHours()
+    const altitude = CalculateSunAltitude(date, hour, latitude, longitude, timezone);
+    
+    return {
+
+      time,
+      date: date,
+      hour: hour,
+      sunshine: (new Date(time).getHours() > sunrise && new Date(time).getHours() <= (sunset)) ? 100 - hourlyForecastData.cloud_cover[i] : null,
+      altitude: altitude
+
+    }
+
+  });
+
+  let combined = dataArray.map(dailyData => {
+    let hourlyDataForDay = dataArrayHourly.filter(hourlyData => hourlyData.date === dailyData.date);
+    return {
+      date: dailyData.date,
+      dailySunshine: dailyData.sunshine,
+      hourlyForecast: hourlyDataForDay,
+    };
+  });
+
+  function getWeekDay(dateString) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let date = new Date(dateString);
+    let dayName = days[date.getDay()];
+    return dayName;
+  }
 
 
   return (
     <>
-      <h2>
-        Sunset in {city} {isSunsetPast} at {formatTime(sunData.sunset)} today.
-      </h2>
-      <div className="weather-forecast">
-        {dataArray.map((data, index) => (
-          <div key={index}>
-            <p>{data.time}</p>
-            <img
-              src="sun.svg"
-              style={{
-                height: data.sunshine / 1000 + "px",
-                width: data.sunshine / 1000 + "px",
-              }}
-            />
+      {!sunData && (
+        <>
+          <p>Oh no</p>
+        </>
+      )}
+      {sunData && (
+        <>
+          <h2>
+            Sunset in {city} {isSunsetPast} at {formattedSunsetTime} today.
+          </h2>
+          <div className="card-container">
+            {combined.map((data, index) => (
+              <div key={index} className="card-forecast">
+                <strong>{getWeekDay(data.date)}</strong>
+                {/* <div className="horizon"></div> */}
+                <div style={{
+                  display: 'flex', justifyContent: 'space-between', paddingLeft: '3px'//,
+                  // border: '1px solid black'
+                }}>
+                  {data.hourlyForecast.map((data, index) => (
+                    <div key={index} style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      // border: '1px solid blue',
+                      height: 35,
+                      width: 1
+                    }}>
+                      <img className="sun"
+                        src="sun.svg"
+                        style={{
+                          height: data.sunshine / 8 + "px",
+                          width: data.sunshine / 8 + "px",
+                          top: `${(1 - data.altitude) * 35 - 20}px`,
+                        }}
+                      />
+                    </div>
+
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
+
     </>
   );
 };

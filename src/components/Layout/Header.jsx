@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import cityData from "../../json/cityData.json";
 
 export const Header = ({
   initialHeightOfParentDiv,
@@ -79,7 +80,7 @@ export const Header = ({
             alt="Logo"
           />
         </div>
- 
+
         <h1
           className="header-title"
           style={{
@@ -92,18 +93,27 @@ export const Header = ({
         </h1>
       </div >
       <div className={menuVisible ? 'menu visible' : 'menu'}>
-          <ul>
-            <Link to="/" onClick={() => setMenuVisible(false)}>
-              <li><strong>Home</strong></li>
-            </Link>
-            <Link to="/examples" onClick={() => setMenuVisible(false)}>
-              <li><strong>Examples</strong></li>
-            </Link>
-            <Link to="/about" onClick={() => setMenuVisible(false)}>
-              <li><strong>About</strong></li>
-            </Link>
+        <ul>
+          <Link to="/" onClick={() => setMenuVisible(false)}>
+            <li><strong>Home</strong></li>
+          </Link>
+          <Link to="/examples" onClick={() => setMenuVisible(false)}>
+            <li><strong>Examples</strong></li>
+          </Link>
+          <Link to="/about" onClick={() => setMenuVisible(false)}>
+            <li><strong>About</strong></li>
+          </Link>
+          <li><strong>Cities:</strong></li>
+          <ul className="nested-ul">
+            {cityData.map((item) => (
+              <Link to={`/city/${item.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => setMenuVisible(false)}>
+                <li>{item.name}</li>
+              </Link>
+            ))}
+
           </ul>
-        </div >
+        </ul>
+      </div >
       <div style={{ height: initialHeightOfParentDiv }}></div>{" "}
 
 

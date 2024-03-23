@@ -1,4 +1,4 @@
-import { ThemeToggle } from "../components/ThemeToggle/ThemeToggle";
+import { ThemeToggle } from "../components/Examples/ThemeToggle/ThemeToggle";
 import { Examples } from "../components/Examples";
 import { BarChartWrapper } from "../components/BarChartWrapper";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { StaticComponent } from "./StaticComponent" 
-import { PropComponentPropTypes } from "./PropComponentPropTypes"
-import { Component } from "./ComponentWithCss/Component"
+import { StaticComponent } from "./Examples/StaticComponent" 
+import { PropComponentPropTypes } from "./Examples/PropComponentPropTypes"
+import { Component } from "./Examples/ComponentWithCss/Component"
 import { DataParent } from "./Examples/DataTypesExamplesAsProps/DataParent"
 
 

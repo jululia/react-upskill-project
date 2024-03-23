@@ -91,16 +91,16 @@ export const Header = ({
           All about the sun
         </h1>
       </div >
-      <div className="menu">
-          <ul className={menuVisible ? 'visible' : ''}>
+      <div className={menuVisible ? 'menu visible' : 'menu'}>
+          <ul>
             <Link to="/" onClick={() => setMenuVisible(false)}>
-              <li>Home</li>
+              <li><strong>Home</strong></li>
             </Link>
             <Link to="/examples" onClick={() => setMenuVisible(false)}>
-              <li>Examples</li>
+              <li><strong>Examples</strong></li>
             </Link>
             <Link to="/about" onClick={() => setMenuVisible(false)}>
-              <li>About</li>
+              <li><strong>About</strong></li>
             </Link>
           </ul>
         </div >

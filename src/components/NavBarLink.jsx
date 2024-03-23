@@ -13,7 +13,7 @@ export const NavBarLink = () => {
       }, [location]);
 
     return (
-        <div>
+        <div className="main-navbar-div">
             <nav>
                 <Header
                     initialHeightOfParentDiv={location.pathname === '/' & counter <=2 ? 430 : 70}

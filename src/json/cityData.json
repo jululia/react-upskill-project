@@ -6,6 +6,12 @@
     "timezone": 1
   },
   {
+    "name": "Uppsala",
+    "latitude": 59.85882,
+    "longitude": 17.63889,
+    "timezone": 1
+  },
+  {
     "name": "Gothenburg",
     "latitude": 57.70887,
     "longitude": 11.97456,

@@ -92,7 +92,7 @@ export const Header = ({
           All about the sun
         </h1>
       </div >
-      <div className={menuVisible ? 'menu visible' : 'menu'}>
+      <div className={menuVisible && divHeight === finalHeightOfParentDiv? 'menu visible' : 'menu'}>
         <ul>
           <Link to="/" onClick={() => setMenuVisible(false)}>
             <li><strong>Home</strong></li>

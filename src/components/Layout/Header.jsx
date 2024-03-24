@@ -97,11 +97,11 @@ export const Header = ({
           <Link to="/" onClick={() => setMenuVisible(false)}>
             <li><strong>Home</strong></li>
           </Link>
-          <Link to="/examples" onClick={() => setMenuVisible(false)}>
-            <li><strong>Examples</strong></li>
-          </Link>
           <Link to="/about" onClick={() => setMenuVisible(false)}>
             <li><strong>About</strong></li>
+          </Link>
+          <Link to="/examples" onClick={() => setMenuVisible(false)}>
+            <li><strong>Examples</strong></li>
           </Link>
           <li><strong>Cities:</strong></li>
           <ul className="nested-ul">

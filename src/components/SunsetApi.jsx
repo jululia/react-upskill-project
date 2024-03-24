@@ -26,7 +26,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
         setSunData(sunriseSunsetJson.results);
 
         const openMeteoResponse = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=cloud_cover&daily=sunshine_duration`
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=cloud_cover&daily=sunshine_duration,temperature_2m_max`
         );
         const openMeteoJson = await openMeteoResponse.json();
         setHourlyForecastData(openMeteoJson.hourly);
@@ -85,7 +85,10 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
   const dataArray = dailyForecastData.time.map((time, i) => ({
     date: time,
     sunshine: dailyForecastData.sunshine_duration[i],
+    temperature: dailyForecastData.temperature_2m_max[i],
   }));
+
+
 
   const dataArrayHourly = hourlyForecastData.time.map((time, i) => {
 
@@ -110,6 +113,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
     return {
       date: dailyData.date,
       dailySunshine: dailyData.sunshine,
+      dailyTemperature: dailyData.temperature,
       hourlyForecast: hourlyDataForDay,
     };
   });
@@ -137,12 +141,14 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
           <div className="card-container">
             {combined.map((data, index) => (
               <div key={index} className="card-forecast">
-                <strong>{getWeekDay(data.date)}</strong>
+                <strong>{getWeekDay(data.date)} </strong>{Math.round(data.dailyTemperature)}°C
+                
                 <div className="horizon"></div>
                 <div style={{
                   display: 'flex', justifyContent: 'space-between', paddingLeft: '3px'//,
                   // border: '1px solid black'
                 }}>
+                  <strong style={{zIndex: 15, color: 'black'}}>{data.max_temperature}</strong>
                   {data.hourlyForecast.map((data, index) => (
                     <div key={index} style={{
                       display: 'flex',

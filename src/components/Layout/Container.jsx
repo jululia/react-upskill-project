@@ -28,6 +28,7 @@ export const Container = () => {
           {item.name}
         </button>
       ))}
+      <p>Note that the temperature indicates maximum temperature per day.</p>
       <SunsetApi
         city={city}
         latitude={latitude}

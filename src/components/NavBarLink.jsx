@@ -15,6 +15,7 @@ export const NavBarLink = () => {
 
     return (
         
+        <>
             <nav>
                 <div className="main-navbar-div">
                 <Header
@@ -23,6 +24,8 @@ export const NavBarLink = () => {
                     initialSizeSun={location.pathname === '/' & counter <=2 ? 250 : 50} />
                     </div>
             </nav>
+            <div className="dummy-div" style={{ height: location.pathname === '/' & counter <=2 ? 430 : 70 }}></div>
+              </>
         
     );
 };

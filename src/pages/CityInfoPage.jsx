@@ -14,9 +14,7 @@ export const CityInfoPage = () => {
 
   return (
     <>
-    <div className="intro"></div>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi iste cum veritatis minima maxime impedit assumenda, voluptate sint excepturi neque quo sequi repellat, esse corporis nihil, animi necessitatibus officiis repudiandae.
-
+      <div className="intro"></div>
       <h1>{cityInfo.name}</h1>
       <p>Longitude: {cityInfo.longitude}</p>
       <p>Latitude: {cityInfo.latitude}</p>

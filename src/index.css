@@ -267,6 +267,7 @@ ul {
   list-style-type: none;
   text-align: left;
   padding-left: 10px;
+  padding-right: 10px;
   /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
 }
 
@@ -279,6 +280,7 @@ nested-ul {
 ul li {
   padding: 5px;
   color: #333;
+  margin: 2px;
 }
 
 ul li:hover {
@@ -318,6 +320,10 @@ ul li:hover {
   transition: transform 0.2s ease-in-out;
   transform: translateY(10px);
   width: 150px;
+}
+
+.dummy-div{
+  position: static;
 }
 
 

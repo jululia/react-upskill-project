@@ -114,9 +114,6 @@ export const Header = ({
           </ul>
         </ul>
       </div >
-      <div style={{ height: initialHeightOfParentDiv }}></div>{" "}
-
-
     </>
   );
 };

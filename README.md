@@ -135,22 +135,22 @@ Describe here in detail the weekly implementations
 
 - **What did I implement this week?**
 
-  - [ ] Feature A
-  - [ ] Feature B
-  - [ ] Bug fixes
-  - [ ] Refactoring
-  - [ ] The implementations above are examples, delete them and add yours
-
+  - [x] Added router
+  - [x] Added dynamic routing for each city
+  - [x] Refactoring
+  - [x] Worked with CSS to control the popup menu (pops up when you click the sun, but only when it has reached its final position in the navbar)
+  - [ ] Added interesting content to the city pages (I did not do this)
+  
 - **What obstacles or roadblocks did I face this week?**
 
-  - [ ] Technical challenges
+  - [x] CSS challenges, hard to make it work for all screen sizes
   - [ ] Time constraints
   - [ ] Communication issues
   - [ ] Other (please specify)
   - [ ] The implementations above are examples, delete them and add yours
 
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
-  - [ ] Yes
+  - [x] Yes, when my app is published on Netlify and if I open the "about" page (for example) and then refresh, then it doesn't reload properly. Why is this? 
   - [ ] No
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours

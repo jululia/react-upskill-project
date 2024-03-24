@@ -14,6 +14,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 !important;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,21 +34,6 @@ a {
 
 a:hover {
   color: #535bf2;
-}
-
-.examples {
-  text-align: left;
-  margin-top: 10em;
-  background-color: lightyellow;
-  padding: 2em;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 250px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -59,10 +56,6 @@ h2 {
   margin: 10px;
   background-color: #d6f4fcaa;
   text-align: left;
-}
-
-strong {
-  padding-right: 1em;
 }
 
 button {
@@ -94,10 +87,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+
 /* My stuff */
 .header {
-  width: 100%;
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
@@ -190,15 +185,6 @@ button:focus-visible {
 
 }
 
-/* APP Component CSS */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  /* padding: 2rem; */
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -230,8 +216,13 @@ button:focus-visible {
   }
 }
 
-
-
+.card-container {
+  /* border: 1px solid grey; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 0px; /* adjust as needed */
+  padding: 0px;
+}
 
 .card-forecast {
   /* border: 1px solid grey; */
@@ -242,25 +233,13 @@ button:focus-visible {
   margin: 0em;
   border-bottom: 1px solid white;
   margin-bottom: 1em;
-
   /* flex-grow: 1; */
   position: relative;
-  
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 0px; /* adjust as needed */
-  padding: 0px;
-}
-
-.parent-div-sun{
-  position: relative;
-}
 .horizon {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   background-color: #E7F7FC;
   left: 0%;
   top: 58px;
@@ -269,9 +248,8 @@ button:focus-visible {
   border-top: solid white;
 }
 
-
 .bottom-space {
-  height: 800px; /* Change this to the amount of space you want */
+  height: 800px; /* Used for adding extra space at the bottom of a page */
 }
 
 .sun {
@@ -286,7 +264,6 @@ button:focus-visible {
 
 
 ul {
-  
   list-style-type: none;
   text-align: left;
   padding-left: 10px;
@@ -309,25 +286,17 @@ ul li:hover {
   border-radius: 10px;
 }
 
-/* ul li a {
-  color: #333;
-  text-decoration: none;
-} */
-/* 
-ul.visible  {
-  transform: translateY(100%);
-  
-} */
-
 .main-navbar-div{
+  position: fixed;
   max-width: 1280px;
-  position: relative;
+  width: 100%;
+  z-index: 6;
 }
 
 .menu {
-  position: fixed;
+  position: absolute;
   right: 5px;
-  z-index: 5; 
+  z-index: 6; 
   transform: translateY(-500px);
   background-color: #f9f9f9;
   /* min-width: 120px; */
@@ -335,7 +304,6 @@ ul.visible  {
   /* padding: 5px; */
   padding-top: 50px;
   border-radius: 0px 0px 15px 15px;
-  
   /* padding-top: 50;
   margin-right: 15px; */ 
   /* transition: transform 0.2s ease-in-out; */
@@ -350,7 +318,6 @@ ul.visible  {
   transition: transform 0.2s ease-in-out;
   transform: translateY(10px);
   width: 150px;
-
 }
 
 

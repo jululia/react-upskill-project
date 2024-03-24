@@ -9,7 +9,6 @@ export const App = () => {
         <NavBarLink />
           <Routes>{routes}</Routes>
       </BrowserRouter>
-
     </>
   );
 };

@@ -14,14 +14,16 @@ export const NavBarLink = () => {
       }, [location]);
 
     return (
-        <div className="main-navbar-div">
+        
             <nav>
+                <div className="main-navbar-div">
                 <Header
                     initialHeightOfParentDiv={location.pathname === '/' & counter <=2 ? 430 : 70}
                     finalHeightOfParentDiv={70}
                     initialSizeSun={location.pathname === '/' & counter <=2 ? 250 : 50} />
+                    </div>
             </nav>
-        </div>
+        
     );
 };
 

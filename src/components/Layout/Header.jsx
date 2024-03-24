@@ -66,7 +66,11 @@ export const Header = ({
           height: divHeight,
         }}
       >
-        <div onClick={() => setMenuVisible(!menuVisible)} >
+        <div onClick={() => {
+          if (divHeight == finalHeightOfParentDiv) {
+            setMenuVisible(!menuVisible);
+          }
+        }} >
           <img
             className="header-logo"
             src="sun.svg"
@@ -92,7 +96,7 @@ export const Header = ({
           All about the sun
         </h1>
       </div >
-      <div className={menuVisible && divHeight === finalHeightOfParentDiv? 'menu visible' : 'menu'}>
+      <div className={menuVisible && divHeight === finalHeightOfParentDiv ? 'menu visible' : 'menu'}>
         <ul>
           <Link to="/" onClick={() => setMenuVisible(false)}>
             <li><strong>Home</strong></li>

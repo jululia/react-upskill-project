@@ -15,7 +15,7 @@
 }
 
 #root {
-  max-width: 1280px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -91,7 +91,7 @@ button:focus-visible {
 
 /* My stuff */
 .header {
-  max-width: 1280px;
+  max-width: inherit;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -297,7 +297,7 @@ ul li:hover {
 
 .main-navbar-div{
   position: fixed;
-  max-width: 1280px;
+  max-width: 900px;
   width: 100%;
   z-index: 6;
 }

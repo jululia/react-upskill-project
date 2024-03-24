@@ -138,7 +138,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
             {combined.map((data, index) => (
               <div key={index} className="card-forecast">
                 <strong>{getWeekDay(data.date)}</strong>
-                {/* <div className="horizon"></div> */}
+                <div className="horizon"></div>
                 <div style={{
                   display: 'flex', justifyContent: 'space-between', paddingLeft: '3px'//,
                   // border: '1px solid black'

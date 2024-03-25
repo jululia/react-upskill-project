@@ -84,17 +84,20 @@ export const Header = ({
             alt="Logo"
           />
         </div>
-
-        <h1
-          className="header-title"
-          style={{
-            transform: `translate(${transformTitleX}%, ${transformTitleY}%)`,
-            left: `${leftTitle}%`,
-            top: `${topTitle}%`,
-          }}
-        >
-          All about the sun
-        </h1>
+        <Link to="/" onClick={() => 
+          setMenuVisible(false)}>
+          <h1
+            className="header-title"
+            style={{
+              color: "black",
+              transform: `translate(${transformTitleX}%, ${transformTitleY}%)`,
+              left: `${leftTitle}%`,
+              top: `${topTitle}%`,
+            }}
+          >
+            All about the sun
+          </h1>
+        </Link>
       </div >
       <div className={menuVisible && divHeight === finalHeightOfParentDiv ? 'menu visible' : 'menu'}>
         <ul>
@@ -110,7 +113,7 @@ export const Header = ({
           <li><strong>Cities:</strong></li>
           <ul className="nested-ul">
             {cityData.map((item, index) => (
-              <Link  key={index} to={`/city/${item.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => setMenuVisible(false)}>
+              <Link key={index} to={`/city/${item.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => setMenuVisible(false)}>
                 <li>{item.name}</li>
               </Link>
             ))}

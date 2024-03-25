@@ -126,7 +126,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
   }
 
 
-  console.log(combined);
+
   return (
     <>
       {!sunData && (

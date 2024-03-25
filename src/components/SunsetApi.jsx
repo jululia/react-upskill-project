@@ -126,6 +126,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
   }
 
 
+  console.log(combined);
   return (
     <>
       {!sunData && (
@@ -159,7 +160,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
                       width: 1
                     }}>
                       <img className="sun"
-                        src="sun.svg"
+                        src="/sun.svg"
                         style={{
                           height: data.sunshine / 8 + "px",
                           width: data.sunshine / 8 + "px",

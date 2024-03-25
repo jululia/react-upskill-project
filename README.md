@@ -10,9 +10,6 @@ I will be using an api which provides timestamps for sunrise, sunset and other s
 
 ### Dependencies
 
-- Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-
-  - [Node.js](https://nodejs.org/) (version 12 or higher)
   - [React](https://reactjs.org/) (version 17 or higher)
   - [Vite](https://vitejs.dev/) (version 2 or higher)
 
@@ -25,7 +22,7 @@ I will be using an api which provides timestamps for sunrise, sunset and other s
 ### Executing program
 
 - Navigate to the project folder ```cd react-upskill-project```
-- Run ```npm run dev``` which will run you app on localhost
+- Run ```npm run dev``` which will run your app on localhost
 
 
 ## Help
@@ -38,7 +35,7 @@ Julia, but with support from Diego and the Technigo community.
 
 ## Weekly Project Progress
 
-Describe here in detail the weekly implementations
+Weekly implementations described below.
 
 ### Week 1 Progress
 
@@ -53,14 +50,14 @@ Describe here in detail the weekly implementations
 
 - **What obstacles or roadblocks did I face this week?**
 
-  - [x] Technical challenges (Had trouble with git authentication, issues with logging into Netlify, but both solved now)
+  - [x] Technical challenges (had trouble with git authentication, issues with logging into Netlify, but both solved now)
   - [ ] Time constraints
   - [ ] Communication issues
   - [ ] Other (please specify)
   - [ ] The implementations above are examples, delete them and add yours
 
 - **Is there anything in particular that I would benefit from reviewing with the code instructor to enhance or solve my obstacles or roadblocks of the week?**
-  - [x] Yes. When I open the app on my phone it is zoomed in a bit too much. Why is this? I need to zoom out manully to make sure everything fits the screen. Update, I manage to solve this by reducing the min-width, but would still be nice to have this explained and understand what best practices are. 
+  - [x] Yes. When I open the app on my phone it is zoomed in a bit too much. Why is this? I need to zoom out manully to make sure everything fits the screen. Update, I managed to solve this by reducing the min-width property, but would still be nice to have this explained and understand what best practices are. 
   - [ ] No
   - [ ] Not sure, but would like guidance
   - [ ] The implementations above are examples, delete them and add yours

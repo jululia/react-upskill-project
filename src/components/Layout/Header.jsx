@@ -109,8 +109,8 @@ export const Header = ({
           </Link>
           <li><strong>Cities:</strong></li>
           <ul className="nested-ul">
-            {cityData.map((item) => (
-              <Link to={`/city/${item.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => setMenuVisible(false)}>
+            {cityData.map((item, index) => (
+              <Link  key={index} to={`/city/${item.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => setMenuVisible(false)}>
                 <li>{item.name}</li>
               </Link>
             ))}

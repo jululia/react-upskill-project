@@ -12,12 +12,6 @@
     "timezone": 1
   },
   {
-    "name": "Gothenburg",
-    "latitude": 57.70887,
-    "longitude": 11.97456,
-    "timezone": 1
-  },
-  {
     "name": "London",
     "latitude": 51.509865,
     "longitude": -0.118092,
@@ -27,12 +21,6 @@
     "name": "Nice",
     "latitude": 43.675819,
     "longitude": 7.289429,
-    "timezone": 1
-  },
-  {
-    "name": "Barcelona",
-    "latitude": 41.390205,
-    "longitude": 2.154007,
     "timezone": 1
   },
   {
@@ -52,6 +40,18 @@
     "latitude": 60.0013,
     "longitude": 17.3605,
     "timezone":1
+  },
+  {
+    "name": "Gothenburg",
+    "latitude": 57.70887,
+    "longitude": 11.97456,
+    "timezone": 1
+  },
+  {
+    "name": "Barcelona",
+    "latitude": 41.390205,
+    "longitude": 2.154007,
+    "timezone": 1
   }
 
 ]

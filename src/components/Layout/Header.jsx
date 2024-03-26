@@ -84,8 +84,7 @@ export const Header = ({
             alt="Logo"
           />
         </div>
-        <Link to="/" onClick={() => 
-          setMenuVisible(false)}>
+        <Link to="/">
           <h1
             className="header-title"
             style={{

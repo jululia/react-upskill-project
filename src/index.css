@@ -77,9 +77,10 @@ button {
 .small-button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.2em 0.4em;
+  padding: 0.1em 0.4em;
   margin: 0.2em;
   margin-left: 0.5em;
+  transform: translate(0%, -20%);
   border-width: 2px;
   border-color: grey;
   font-size: 0.8em;

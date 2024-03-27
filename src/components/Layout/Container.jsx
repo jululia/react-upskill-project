@@ -34,7 +34,7 @@ export const Container = () => {
         latitude={latitude}
         longitude={longitude}
         timezone={timezone}
-        showDetailsButton={false}
+        showDetailsButton={true}
       />
     </div>
   );

@@ -126,8 +126,6 @@ export const SunsetApi = ({ city, latitude, longitude, timezone, showDetailsButt
     return dayName;
   }
 
-
-
   return (
     <>
       {!sunData && (
@@ -140,7 +138,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone, showDetailsButt
           <h2 style={{ display: "inline" }}>
             Sunset in {city} {isSunsetPast} at {formattedSunsetTime} today.
           </h2>
-          {showDetailsButton && (
+          {showDetailsButton === true && (
             <Link to={`/city/${city.toLowerCase()}`} style={{ display: "inline" }} >
               <button className="small-button">Show details</button>
             </Link>)}

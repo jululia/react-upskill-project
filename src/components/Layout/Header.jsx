@@ -73,7 +73,7 @@ export const Header = ({
         }} >
           <img
             className="header-logo"
-            src="sun.svg"
+            src="/sun.svg"
             width={sizeSun}
             height={sizeSun}
             style={{

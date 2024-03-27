@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { CalculateSunAltitude } from "./Functions/CalculateSunAltitude";
+import { Link } from 'react-router-dom';
 
-export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
+export const SunsetApi = ({ city, latitude, longitude, timezone, showDetailsButton }) => {
 
   const [sunset, setSunset] = useState();
   const [sunrise, setSunrise] = useState();
@@ -95,7 +96,7 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
     const date = time.slice(0, -6)
     const hour = new Date(time).getHours()
     const altitude = CalculateSunAltitude(date, hour, latitude, longitude, timezone);
-    
+
     return {
 
       time,
@@ -136,20 +137,25 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
       )}
       {sunData && (
         <>
-          <h2>
+          <h2 style={{ display: "inline" }}>
             Sunset in {city} {isSunsetPast} at {formattedSunsetTime} today.
           </h2>
+          {showDetailsButton && (
+            <Link to={`/city/${city.toLowerCase()}`} style={{ display: "inline" }} >
+              <button className="small-button">Show details</button>
+            </Link>)}
           <div className="card-container">
+
             {combined.map((data, index) => (
               <div key={index} className="card-forecast">
                 <strong>{getWeekDay(data.date)} </strong>{Math.round(data.dailyTemperature)}°C
-                
+
                 <div className="horizon"></div>
                 <div style={{
                   display: 'flex', justifyContent: 'space-between', paddingLeft: '3px'//,
                   // border: '1px solid black'
                 }}>
-                  <strong style={{zIndex: 15, color: 'black'}}>{data.max_temperature}</strong>
+                  <strong style={{ zIndex: 15, color: 'black' }}>{data.max_temperature}</strong>
                   {data.hourlyForecast.map((data, index) => (
                     <div key={index} style={{
                       display: 'flex',
@@ -175,7 +181,8 @@ export const SunsetApi = ({ city, latitude, longitude, timezone }) => {
             ))}
           </div>
         </>
-      )}
+      )
+      }
 
     </>
   );

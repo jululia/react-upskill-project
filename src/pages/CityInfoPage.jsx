@@ -13,11 +13,6 @@ export const CityInfoPage = () => {
 
   if (!cityInfo) return <p>City not found!</p>;
 
-  console.log(cityInfo);
-
-
-
-
   return (
     <>
 
@@ -31,6 +26,7 @@ export const CityInfoPage = () => {
         latitude={cityInfo.latitude}
         longitude={cityInfo.longitude}
         timezone={cityInfo.timezone}
+        showDetailsButton={false}
       />
       </div>
       <div className='bottom-space' />

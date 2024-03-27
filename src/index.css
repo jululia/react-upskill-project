@@ -15,7 +15,7 @@
 }
 
 #root {
-  max-width: 900px;
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -70,6 +70,22 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.small-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.2em 0.4em;
+  margin: 0.2em;
+  margin-left: 0.5em;
+  border-width: 2px;
+  border-color: grey;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -230,6 +246,7 @@ button:focus-visible {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 0px; /* adjust as needed */
   padding: 0px;
+  padding-top: 20px;
 }
 
 .card-forecast {
@@ -297,7 +314,7 @@ ul li:hover {
 
 .main-navbar-div{
   position: fixed;
-  max-width: 900px;
+  max-width: 700px;
   width: 100%;
   z-index: 6;
 }

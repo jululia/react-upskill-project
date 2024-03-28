@@ -351,5 +351,9 @@ ul li:hover {
   position: static;
 }
 
+.image {
+  max-width: 700px;
+}
+
 
 

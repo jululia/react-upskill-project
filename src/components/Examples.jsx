@@ -26,7 +26,7 @@ export const Examples = () => {
   // Staticc Data Inyected through {} reference
   const appContent = {
     heading: "All about the sun",
-    componentInfo: "Example components below. These will be removed later, but are probably good to keep as reference for now:",
+    componentInfo: "Example components below. Thought it would be good to keep these as reference:",
   };
 
     return (

@@ -1,0 +1,28 @@
+.wrapper{
+    text-align: left;
+    padding: 1em;
+}
+p {
+    text-align: left;
+}
+h2 {
+    text-align: left;
+}
+
+h3 {
+    text-align: left;
+    margin-top: 50px;
+}
+
+/* button {
+    text-align: left;
+} */
+
+strong {
+    text-align: left;
+}
+
+.image {
+    width: 250px;
+    flex-grow: 1;
+}

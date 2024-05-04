@@ -24,6 +24,12 @@
     "timezone": 1
   },
   {
+    "name": "Kungshamn",
+    "latitude": 58.36305,
+    "longitude": 11.25938,
+    "timezone": 1
+  },
+  {
     "name": "San Diego",
     "latitude": 32.715736,
     "longitude": -117.161087,
@@ -40,18 +46,6 @@
     "latitude": 60.0013,
     "longitude": 17.3605,
     "timezone":1
-  },
-  {
-    "name": "Gothenburg",
-    "latitude": 57.70887,
-    "longitude": 11.97456,
-    "timezone": 1
-  },
-  {
-    "name": "Barcelona",
-    "latitude": 41.390205,
-    "longitude": 2.154007,
-    "timezone": 1
   }
 
 ]

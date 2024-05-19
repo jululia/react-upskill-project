@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SunsetApi } from "../SunsetApi";
 import cityData from "../../json/cityData.json"; // Import JSON file containing city data
+import { getCurrentLocation } from "../Functions/getCurrentLocation";
 
 export const Container = () => {
   const [city, setCity] = useState("Stockholm");
@@ -12,8 +13,17 @@ export const Container = () => {
     // Find the selected city in the cityData JSON
     const selectedCity = cityData.find((item) => item.name === city);
 
-    // If the city is found, update state with its information
-    if (selectedCity) {
+    if (selectedCity.name === "Where you are"){
+      getCurrentLocation()
+      .then((location) => {
+        setLatitude(location.latitude);
+        setLongitude(location.longitude);
+
+      })
+      .catch((error) => {
+        console.error('Error getting location:', error);
+      });
+    } else if (selectedCity) {
       setLatitude(selectedCity.latitude);
       setLongitude(selectedCity.longitude);
       setTimezone(selectedCity.timezone);

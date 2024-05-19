@@ -28,6 +28,12 @@
     "latitude": 58.36305,
     "longitude": 11.25938,
     "timezone": 1
-   } 
+   },
+   {
+    "name": "Where you are",
+    "latitude": null,
+    "longitude": null,
+    "timezone": 1
+   }
 
 ]

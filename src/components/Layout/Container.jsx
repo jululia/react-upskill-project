@@ -8,16 +8,6 @@ export const Container = () => {
   const [longitude, setLongitude] = useState(18.06324);
   const [timezone, setTimezone] = useState(1);
 
-  getCurrentLocation()
-    .then((location) => {
-      setCity(setCity("Where you are"));
-      setLatitude(location.latitude);
-      setLongitude(location.longitude);
-    })
-    .catch((error) => {
-      console.error('Error getting location:', error);
-    });
-
   useEffect(() => {
     // Find the selected city in the cityData JSON
     const selectedCity = cityData.find((item) => item.name === city);

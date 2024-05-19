@@ -28,18 +28,6 @@
     "latitude": 58.36305,
     "longitude": 11.25938,
     "timezone": 1
-  },
-  {
-    "name": "San Diego",
-    "latitude": 32.715736,
-    "longitude": -117.161087,
-    "timezone": -8
-  },
-  {
-    "name": "Oxsätra",
-    "latitude": 60.0013,
-    "longitude": 17.3605,
-    "timezone":1
-  }
+   } 
 
 ]

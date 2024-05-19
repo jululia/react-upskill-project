@@ -12,6 +12,7 @@ I will be using an api which provides timestamps for sunrise, sunset and other s
 
   - [React](https://reactjs.org/) (version 17 or higher)
   - [Vite](https://vitejs.dev/) (version 2 or higher)
+  - [npm](https://nodejs.org/en/download/package-manager) (not really a dependency, but I'm using it)
 
 ### Installing
 

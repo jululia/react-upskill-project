@@ -1,6 +1,6 @@
 # All about the sun
 
-I'm creating this app to learn the main concepts of react. The app is published [here](https://all-about-the-sun.netlify.app/).
+I am creating this app to learn the main concepts of react. The app is published [here](https://all-about-the-sun.netlify.app/).
 
 ## Description
 

@@ -138,9 +138,6 @@ export const SunsetApi = ({ city, latitude, longitude, timezone, showDetailsButt
           <h2 style={{ display: "inline" }}>
           {city === "Where you are" ? `Sunset where you are ${isSunsetPast ? "is" : "is not"} at ${formattedSunsetTime} today.` :
             `Sunset in ${city} ${isSunsetPast ? "is" : "is not"} at ${formattedSunsetTime} today.`}
-
-      {/* {city === "Where you are"? Sunset where you are {isSunsetPast} at {formattedSunsetTime} today.:
-            Sunset in {city} {isSunsetPast} at {formattedSunsetTime} today.} */}
           </h2>
           {showDetailsButton === true && (
             <Link to={`/city/${city.toLowerCase()}`} style={{ display: "inline" }} >
